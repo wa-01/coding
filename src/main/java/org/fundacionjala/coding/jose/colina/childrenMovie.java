@@ -1,6 +1,7 @@
 package org.fundacionjala.coding.jose.colina;
 
 public class childrenMovie extends Movie {
+    private static final int FREQUENT_POINTS = 1;
 
     public childrenMovie(String title){
         super(title);
@@ -16,6 +17,6 @@ public class childrenMovie extends Movie {
 
     @Override
     public int getFrequentRenterPoints(int daysRented) {
-        return 1;
+        return FREQUENT_POINTS;
     }
 }

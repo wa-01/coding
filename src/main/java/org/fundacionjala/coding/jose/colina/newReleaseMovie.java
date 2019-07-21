@@ -1,6 +1,8 @@
 package org.fundacionjala.coding.jose.colina;
 
 public class newReleaseMovie extends Movie {
+    private static final int FREQUENT_POINTS = 1;
+    private static final int BONUS = 1;
 
     public newReleaseMovie(String title){
         super(title);
@@ -15,8 +17,8 @@ public class newReleaseMovie extends Movie {
     @Override
     public int getFrequentRenterPoints(int daysRented) {
         if(daysRented > 1)
-            return 2;
+            return FREQUENT_POINTS + BONUS;
         else
-            return 1;
+            return FREQUENT_POINTS;
     }
 }
