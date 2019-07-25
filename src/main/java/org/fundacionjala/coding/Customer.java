@@ -7,11 +7,11 @@ public class Customer {
     private String name;
     private List<Rental> myRentals = new ArrayList<Rental>();
 
-    public Customer(String name) {
+    public Customer(final String name) {
         this.name = name;
     }
 
-    public void addRental(Rental rental) {
+    public void addRental(final Rental rental) {
         myRentals.add(rental);
     }
 
@@ -35,7 +35,7 @@ public class Customer {
         return result;
     }
 
-    private double getTotalAmount(Iterable<Rental> rentals) {
+    private double getTotalAmount(final Iterable<Rental> rentals) {
         double totalAmount = 0;
         for (Rental each: rentals) {
             double amount = each.getAmount();
@@ -44,17 +44,18 @@ public class Customer {
         return  totalAmount;
     }
 
-    private int getFrequentRenterPoints(List<Rental> myRentals) {
+    private int getFrequentRenterPoints(final List<Rental> myRentals) {
         int frequentRenterPoints = 0;
         for (Rental each: myRentals) {
             frequentRenterPoints++;
-            if (each.getMovie().getPriceCode() == Movie.NEW_RELEASE && each.getDaysRented() > 1)
+            if (each.getMovie().getPriceCode() == Movie.NEW_RELEASE && each.getDaysRented() > 1) {
                 frequentRenterPoints++;
+            }
         }
         return frequentRenterPoints;
     }
 
-    private String getHeader(String name) {
+    private String getHeader(final String name) {
         return "Rental Record for " + name + "\n";
     }
 
