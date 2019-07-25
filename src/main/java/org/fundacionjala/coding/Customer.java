@@ -25,7 +25,7 @@ public class Customer {
 
         for (Rental each: myRentals) {
             double amount = each.getAmount();
-            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(amount) + "\n";
+            result += "\t" + each.getTitle() + "\t" + String.valueOf(amount) + "\n";
         }
 
         double totalAmount = getTotalAmount(myRentals);
@@ -47,10 +47,11 @@ public class Customer {
     private int getFrequentRenterPoints(final List<Rental> myRentals) {
         int frequentRenterPoints = 0;
         for (Rental each: myRentals) {
-            frequentRenterPoints++;
+            /* frequentRenterPoints++;
             if (each.getMovie().getPriceCode() == Movie.NEW_RELEASE && each.getDaysRented() > 1) {
                 frequentRenterPoints++;
-            }
+            }*/
+            frequentRenterPoints += each.getFrequentRenterPoints();
         }
         return frequentRenterPoints;
     }

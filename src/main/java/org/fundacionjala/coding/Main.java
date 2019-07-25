@@ -3,9 +3,12 @@ package org.fundacionjala.coding;
 public class Main {
     public static void main(String[] args) {
         Customer customer = new Customer("Test");
-        customer.addRental(new Rental(new Movie("The Revenant", new NewRelease()), 2));
-        customer.addRental(new Rental(new Movie("Terminator", new Regular()), 2));
-        customer.addRental(new Rental(new Movie("El Rey Leon", new Children()), 3));
+        AMovie children1 = new ChildrensMovie("El Rey Leon");
+        AMovie newRelease1 =  new NewReleaseMovie("The Revenant");
+        AMovie regular1 = new RegularMovie("Terminator");
+        customer.addRental(new Rental(newRelease1, 2));
+        customer.addRental(new Rental(regular1, 2));
+        customer.addRental(new Rental(children1, 3));
         System.out.println(customer.getStatement());
     }
 }

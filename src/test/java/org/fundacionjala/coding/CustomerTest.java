@@ -5,10 +5,22 @@ import static org.junit.Assert.*;
 
 public class CustomerTest {
     private Customer customer;
+    private AMovie children1;
+    // private AMovie children2;
+    private AMovie newRelease1;
+    // private AMovie newRelease2;
+    private AMovie regular1;
+    // private AMovie regular2;
 
     @Before
     public void setUp() {
         customer = new Customer("Lizzy");
+        children1 = new ChildrensMovie("El Rey Leon");
+        // children2 = new ChildrensMovie("El Rey Leon 2");
+        newRelease1 =  new NewReleaseMovie("The Revenant");
+        // newRelease2 =  new NewReleaseMovie("The Revenant 2");
+        regular1 = new RegularMovie("Terminator");
+        // regular2 = new RegularMovie("Terminator 2");
     }
 
     @Test
@@ -23,7 +35,7 @@ public class CustomerTest {
 
     @Test
     public void getStatement_OneMovieChildren_resultChildrenStatement() {
-        customer.addRental(new Rental(new Movie("El Rey Leon", new Children()), 3));
+        customer.addRental(new Rental(children1, 3));
         String actual = customer.getStatement();
         String expected = "Rental Record for Lizzy\n"+
                 "\tEl Rey Leon\t1.5\n" +
@@ -35,8 +47,8 @@ public class CustomerTest {
 
     @Test
     public void getStatement_TwoMoviesNewReleaseRegular_resultNewReleaseRegularStatement() {
-        customer.addRental(new Rental(new Movie("The Revenant", new NewRelease()), 2));
-        customer.addRental(new Rental(new Movie("Terminator", new Regular()), 2));
+        customer.addRental(new Rental(newRelease1, 2));
+        customer.addRental(new Rental(regular1, 2));
         String actual = customer.getStatement();
         String expected = "Rental Record for Lizzy\n"+
                         "\tThe Revenant\t6.0\n" +
