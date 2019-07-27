@@ -4,8 +4,8 @@ import java.util.Enumeration;
 import java.util.Vector;
 
 class Customer {
-    String _name;
-    Vector _rentals = new Vector();
+    private String _name;
+    private Vector _rentals = new Vector();
 
     public Customer(String name) {
         _name = name;
@@ -19,16 +19,20 @@ class Customer {
         return _name;
     }
 
+    public Vector getRentals() {
+        return _rentals;
+    }
+
     public double getBill() {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         Enumeration rentals = _rentals.elements();
-        double toBill = 0;
+        double bill = 0;
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
-            toBill += each.getMovie().getPrice(each.getDaysRented());
+            bill += each.getMovie().getPrice(each.getDaysRented());
         }
-        return toBill;
+        return bill;
     }
 
     public int getPoints() {
@@ -40,33 +44,4 @@ class Customer {
         }
         return frequentRenterPoints;
     }
-
-    /*public String statement() {
-        double totalAmount = 0;
-        int frequentRenterPoints = 0;
-        Enumeration rentals = _rentals.elements();
-        String result = "Rental Record for " + getName() + "\n";
-        while (rentals.hasMoreElements()) {
-            double thisAmount = 0;
-            Rental each = (Rental) rentals.nextElement();
-
-            // add frequent renter points
-            frequentRenterPoints++;
-            // add bonus for a two day new release rental
-            if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1) {
-                frequentRenterPoints++;
-            }
-            //show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" +
-                    String.valueOf(thisAmount) + "\n";
-            totalAmount += thisAmount;
-        }
-        //add footer lines
-        result += "Amount owed is " + String.valueOf(totalAmount) +
-                "\n";
-        result += "You earned " + String.valueOf(frequentRenterPoints)
-                +
-                " frequent renter points";
-        return result;
-    }*/
 }
