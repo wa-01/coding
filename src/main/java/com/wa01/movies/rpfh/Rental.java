@@ -2,7 +2,8 @@ package com.wa01.movies.rpfh;
 
 class Rental {
     private Movie movie;
-    private int daysRented;
+    public int daysRented;
+
     public Rental(Movie movie, int daysRented) {
         this.movie = movie;
         this.daysRented = daysRented;

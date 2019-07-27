@@ -2,7 +2,7 @@ package com.wa01.movies.rpfh;
 
 public class Children extends Movie {
     private String title;
-    private int PRICE_TYPE =2;
+    private int PRICE_TYPE = 2;
     private double PRICE_FACTOR = 1.5;
 
     public Children(String title) {
@@ -11,10 +11,10 @@ public class Children extends Movie {
 
     @Override
     public double getPrice(int daysRented) {
-        double ownning=1.5;
+        double ownning = 1.5;
         if (daysRented > 3)
-            ownning+= (daysRented - 3) * PRICE_FACTOR;
-        System.out.println("Regular movie > " + super.getTitle() + "   $"+ ownning);
+            ownning += (daysRented - 3) * PRICE_FACTOR;
+        System.out.println("Regular movie > " + super.getTitle() + "   $" + ownning);
         return ownning;
     }
 

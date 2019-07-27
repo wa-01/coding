@@ -1,6 +1,6 @@
 package com.wa01.movies.rpfh;
 
-public abstract class  Movie {
+public abstract class Movie {
     private String title;
 
     public Movie(String title) {
