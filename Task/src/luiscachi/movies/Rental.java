@@ -1,6 +1,4 @@
-package movies;
-
-import java.util.ArrayList;
+package luiscachi.movies;
 
 class Rental {
     private AbstractMovie _movie;

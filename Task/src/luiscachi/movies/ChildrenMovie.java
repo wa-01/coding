@@ -1,4 +1,4 @@
-package movies;
+package luiscachi.movies;
 
 public class ChildrenMovie extends AbstractMovie {
 

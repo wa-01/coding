@@ -1,4 +1,4 @@
-package movies;
+package luiscachi.movies;
 
 public abstract class AbstractMovie {
  private String _title;

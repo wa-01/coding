@@ -1,7 +1,6 @@
-package movies;
+package luiscachi.movies;
 
 import java.util.ArrayList;
-import java.util.Enumeration;
 
 class Customer {
     private String _name;
