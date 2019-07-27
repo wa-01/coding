@@ -1,28 +1,48 @@
 package movies;
 
+import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.Vector;
 
 class Customer {
     private String _name;
-    private Vector _rentals = new Vector();
+    private ArrayList<Rental> _rentals = new ArrayList<Rental>();
+    private int frequentRenterPoints;
+    private double totalAmount;
 
     public Customer(String name) {
         _name = name;
     }
 
-    public void addRental(Rental arg) {
-        _rentals.addElement(arg);
+    public void addRental(Rental rental) {
+        _rentals.add(rental);
     }
 
     public String getName() {
         return _name;
     }
 
-    public String statement() {
+    public String statement(){
+        String result = "Rental record for "+ getName() + "\n";
+        result += summary();
+        return result;
+    }
+
+    private String summary() {
+        String res = "";
+        for (Rental rental: _rentals) {
+            frequentRenterPoints += rental.getFrequentPoint();
+            totalAmount += rental.totalAmount();
+            res += "\t" +rental.toString() + "\t\n";
+        }
+        res += "Amount owned is " + totalAmount +"\n"+"Your earned "
+                +frequentRenterPoints +" frequest renter point";
+        return res;
+    }
+
+    public String statement2() {
         double totalAmount = 0;
-        int frequentRenterPoints = 0;
-        Enumeration rentals = _rentals.elements();
+        frequentRenterPoints = 0;
+        Enumeration rentals = (Enumeration) _rentals.get(1);
         String result = "Rental Record for " + getName() + "\n";
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
