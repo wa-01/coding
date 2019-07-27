@@ -12,6 +12,7 @@ class Rental {
         _movie = movie;
         _daysRented = daysRented;
         calculatePoints();
+        calculateTotalAmount();
     }
 
     private void calculatePoints() {
@@ -32,12 +33,16 @@ class Rental {
         return _movie.getFrequentPoint();
     }
 
-    public double totalAmount(){
-        return _movie.calculateAmount(_daysRented);
+    private void calculateTotalAmount(){
+        amount = _movie.calculateAmount(_daysRented);
     }
 
     public String toString(){
-        return _movie.getTitle() + " " + totalAmount();
+        return _movie.getTitle() + " " + getAmount();
+    }
+
+    public double getAmount(){
+        return amount;
     }
 
 }
