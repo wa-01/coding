@@ -23,7 +23,9 @@ public class Customer {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         Enumeration rentals = _rentals.elements();
-        String result = "Rental Record for " + getName() + "\n";
+        String name = getName();
+        String result = header(name);
+        String result = "Rental Record for " + name + "\n";
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = (Rental) rentals.nextElement();
@@ -47,6 +49,10 @@ public class Customer {
                 +
                 " frequent renter points";
         return result;
+    }
+
+    private String header(String name) {
+
     }
 
     private double getThisAmount(double thisAmount, Rental each) {
