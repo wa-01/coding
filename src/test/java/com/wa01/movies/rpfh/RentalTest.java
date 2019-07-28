@@ -40,15 +40,8 @@ public class RentalTest {
 
     @Test
     public void customerCanRentMovies() {
-        /*release = new Release("Jumanji II");
-        regular = new Regular("Assassins Creed");
-        children = new Children("Toy Story");
-
-        customer.addRental(new Rental(release, 2));
-        customer.addRental(new Rental(regular, 2));
-        customer.addRental(new Rental(children, 2));*/
-
         Assert.assertFalse(customer.getRentals().isEmpty());
+        System.out.println("Rental Record for " + customer.getName() + "\n");
         Assert.assertTrue(customer.getBill() > 0);
     }
 

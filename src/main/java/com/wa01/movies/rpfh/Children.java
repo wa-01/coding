@@ -1,6 +1,7 @@
 package com.wa01.movies.rpfh;
 
 public class Children extends Movie {
+    public static final double priceFactor = 1.5;
 
     public Children(String title) {
         super(title);
@@ -8,7 +9,6 @@ public class Children extends Movie {
 
     @Override
     public double getPrice(int daysRented) {
-        double priceFactor = 1.5;
         double bill = 1.5;
         if (daysRented > 3) {
             bill += (daysRented - 3) * priceFactor;

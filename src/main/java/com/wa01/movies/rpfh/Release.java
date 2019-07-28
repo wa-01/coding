@@ -1,6 +1,7 @@
 package com.wa01.movies.rpfh;
 
 public class Release extends Movie {
+    public static final double priceFactor = 3.0;
 
     public Release(String title) {
         super(title);
@@ -13,7 +14,6 @@ public class Release extends Movie {
 
     @Override
     public double getPrice(int daysRented) {
-        double priceFactor = 3;
         double bill = daysRented * priceFactor;
         System.out.println("Release movie > " + super.getTitle() + "   $" + bill);
         return bill;
