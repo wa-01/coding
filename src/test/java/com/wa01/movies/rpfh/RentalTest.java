@@ -13,8 +13,10 @@ public class RentalTest {
     @Before
     public void setUp() {
         customer = new Customer("Tester");
-        customer.addRental(new Rental(new Release("The Revenant"), 2));
-        customer.addRental(new Rental(new Regular("Terminator"), 2));
+        customer.addRental(new Rental(new Release("The Revenant"), 1));
+        customer.addRental(new Rental(new Regular("Terminator"), 1));
+        customer.addRental(new Rental(new Children("Toy Story"), 1));
+        customer.addRental(new Rental(new Release("Infinity War"), 1));
     }
 
     @Test
@@ -38,15 +40,16 @@ public class RentalTest {
 
     @Test
     public void customerCanRentMovies() {
-        release = new Release("Jumanji II");
+        /*release = new Release("Jumanji II");
         regular = new Regular("Assassins Creed");
         children = new Children("Toy Story");
 
         customer.addRental(new Rental(release, 2));
         customer.addRental(new Rental(regular, 2));
-        customer.addRental(new Rental(children, 2));
+        customer.addRental(new Rental(children, 2));*/
 
         Assert.assertFalse(customer.getRentals().isEmpty());
+        Assert.assertTrue(customer.getBill() > 0);
     }
 
 }

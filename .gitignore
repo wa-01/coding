@@ -4,3 +4,6 @@
 /out/
 *.iml
 /java/
+/gradle/
+gradlew
+gradlew.bat

@@ -1,28 +1,32 @@
 package com.wa01.movies.rpfh;
 
 class Rental {
-    private Movie movie;
-    public int daysRented;
+    private Movie _movie;
+    private int _daysRented;
 
     public Rental(Movie movie, int daysRented) {
-        this.movie = movie;
-        this.daysRented = daysRented;
+        _movie = movie;
+        _daysRented = daysRented;
     }
 
-    public void setMovie(Movie movie) {
-        this.movie = movie;
+    /*public void setMovie(Movie movie) {
+        _movie = movie;
     }
 
     public void setDaysRented(int daysRented) {
-        this.daysRented = daysRented;
-    }
+        _daysRented = daysRented;
+    }*/
 
     public Movie getMovie() {
-        return movie;
+        return _movie;
     }
 
     public int getDaysRented() {
-        return daysRented;
+        return _daysRented;
+    }
+
+    public String getMovieTitle (){
+        return _movie.getTitle();
     }
 
 }

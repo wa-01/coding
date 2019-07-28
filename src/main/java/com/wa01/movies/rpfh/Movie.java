@@ -1,14 +1,14 @@
 package com.wa01.movies.rpfh;
 
 public abstract class Movie {
-    private String title;
+    private String _title;
 
     public Movie(String title) {
-        this.title = title;
+        _title = title;
     }
 
     public String getTitle() {
-        return title;
+        return _title;
     }
 
     public abstract double getPrice(int daysRented);

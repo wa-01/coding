@@ -18,21 +18,6 @@ public class MovieTest {
     }
 
     @Test
-    public void regularMovieIsAMovie() {
-        Assert.assertTrue(regular instanceof Movie);
-    }
-
-    @Test
-    public void releaseMovieIsAMovie() {
-        Assert.assertTrue(release instanceof Movie);
-    }
-
-    @Test
-    public void childrenMovieIsAMovie() {
-        Assert.assertTrue(children instanceof Movie);
-    }
-
-    @Test
     public void movieHasTitle() {
         Assert.assertFalse(release.getTitle().isEmpty());
         Assert.assertFalse(regular.getTitle().isEmpty());
@@ -41,7 +26,6 @@ public class MovieTest {
 
     @Test
     public void movieHasPrice() {
-        //String title = "Zombieland II";
         Assert.assertTrue(release.getPrice(1) > 0);
         Assert.assertTrue(regular.getPrice(1)> 0);
         Assert.assertTrue(children.getPrice(1)> 0);
