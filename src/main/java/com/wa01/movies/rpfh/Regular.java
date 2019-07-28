@@ -4,8 +4,8 @@ import java.util.logging.Logger;
 
 public class Regular extends Movie {
 
-    public static final double priceFactor = 1.5;
-    private final static Logger logger = Logger.getLogger("com.wa01.movies.rpfh.Regular");
+    public static final double PRICE_FACTOR = 1.5;
+    private static final Logger logger = Logger.getLogger("com.wa01.movies.rpfh.Regular");
 
     public Regular(String title) {
         super(title);
@@ -20,9 +20,10 @@ public class Regular extends Movie {
     public double getPrice(int daysRented) {
         double bill = 2;
         if (daysRented > 2) {
-            bill += (daysRented - 2) * priceFactor;
+            bill += (daysRented - 2) * PRICE_FACTOR;
         }
-        logger.log(Level.INFO,"Regular movie > " + super.getTitle() + "   $" + bill);
+        String message = super.getTitle() + "   $" + bill;
+        logger.log(Level.INFO, ()-> "Regular movie > " + message);
         return bill;
     }
 }

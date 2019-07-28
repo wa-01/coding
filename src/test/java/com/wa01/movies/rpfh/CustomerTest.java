@@ -1,6 +1,7 @@
 package com.wa01.movies.rpfh;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class CustomerTest {
@@ -9,6 +10,13 @@ public class CustomerTest {
     private Release release;
     private Regular regular;
     private Children children;
+
+    @Before
+    public void setUp(){
+        release = new Release("Captain Marvel");
+        regular = new Regular("New Regular Movie");
+        children = new Children("New Children Movie");
+    }
 
     @Test
     public void customerHasName() {
@@ -20,23 +28,20 @@ public class CustomerTest {
     @Test
     public void customerHasPointsForRentReleaseMovie() {
         customer = new Customer("Maria");
-        release = new Release("Captain Marvel");
         customer.addRental(new Rental(release, 1));
         Assert.assertTrue(customer.getPoints() >= 1);
     }
 
     @Test
     public void customerHasNotPointsForRentRegularMovie() {
-        customer = new Customer("Maria");
-        regular = new Regular("New Regular Movie");
+        customer = new Customer("Martha");
         customer.addRental(new Rental(regular, 1));
         Assert.assertTrue(customer.getPoints() == 0);
     }
 
     @Test
     public void customerHasNotPointsForRentChildrenMovie() {
-        customer = new Customer("Maria");
-        children = new Children("New Children Movie");
+        customer = new Customer("Andy");
         customer.addRental(new Rental(children, 1));
         Assert.assertTrue(customer.getPoints() == 0);
     }

@@ -1,4 +1,6 @@
 package com.wa01.movies.rpfh;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -6,6 +8,8 @@ import org.junit.Test;
 
 public class RentalTest {
     private Customer customer;
+    private static final Logger logger = Logger.getLogger("com.wa01.movies.rpfh.RentalTest");
+
 
     @Before
     public void setUp() {
@@ -32,7 +36,7 @@ public class RentalTest {
     @Test
     public void customerCanRentMovies() {
         Assert.assertFalse(customer.getRentals().isEmpty());
-        System.out.println("Rental Record for " + customer.getName() + "\n");
+        logger.log(Level.INFO, ()-> "Rental Record for " + customer.getName());
         Assert.assertTrue(customer.getBill() > 0);
     }
 

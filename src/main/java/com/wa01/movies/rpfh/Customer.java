@@ -9,9 +9,8 @@ import java.util.Vector;
 
 class Customer {
     private final String name;
-    //private final Vector rentals = new Vector();
     private final ArrayList <Rental> rentals = new ArrayList<Rental>();
-    private final static Logger logger = Logger.getLogger("com.wa01.movies.rpfh.Customer");
+    private static final Logger logger = Logger.getLogger("com.wa01.movies.rpfh.Customer");
 
     public Customer(String name) {
         this.name = name;

@@ -3,8 +3,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Release extends Movie {
-    public static final double priceFactor = 3.0;
-    private final static Logger logger = Logger.getLogger("com.wa01.movies.rpfh.Release");
+    public static final double PRICE_FACTOR = 3.0;
+    private static final Logger logger = Logger.getLogger("com.wa01.movies.rpfh.Release");
 
     public Release(String title) {
         super(title);
@@ -17,8 +17,9 @@ public class Release extends Movie {
 
     @Override
     public double getPrice(int daysRented) {
-        double bill = daysRented * priceFactor;
-        logger.log(Level.INFO,"Release movie > " + super.getTitle() + "   $" + bill);
+        double bill = daysRented * PRICE_FACTOR;
+        String message = super.getTitle() + "   $" + bill;
+        logger.log(Level.INFO, ()-> "Release movie > " + message);
         return bill;
     }
 }
