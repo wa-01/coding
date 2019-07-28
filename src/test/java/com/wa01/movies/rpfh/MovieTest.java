@@ -5,7 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class MovieTest {
-    private Movie movie;
     private Regular regular;
     private Release release;
     private Children children;

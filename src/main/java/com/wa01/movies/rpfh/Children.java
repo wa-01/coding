@@ -1,7 +1,10 @@
 package com.wa01.movies.rpfh;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Children extends Movie {
     public static final double priceFactor = 1.5;
+    private final static Logger logger = Logger.getLogger("com.wa01.movies.rpfh.Children");
 
     public Children(String title) {
         super(title);
@@ -13,7 +16,7 @@ public class Children extends Movie {
         if (daysRented > 3) {
             bill += (daysRented - 3) * priceFactor;
         }
-        System.out.println("Children movie > " + super.getTitle() + "   $" + bill);
+        logger.log(Level.INFO,"Children movie > " + super.getTitle() + "   $" + bill);
         return bill;
     }
 

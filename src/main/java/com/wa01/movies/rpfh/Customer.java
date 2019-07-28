@@ -1,53 +1,52 @@
 package com.wa01.movies.rpfh;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import java.util.Enumeration;
 import java.util.Vector;
 
 class Customer {
     private final String name;
-    private final Vector rentals = new Vector();
+    //private final Vector rentals = new Vector();
+    private final ArrayList <Rental> rentals = new ArrayList<Rental>();
+    private final static Logger logger = Logger.getLogger("com.wa01.movies.rpfh.Customer");
 
     public Customer(String name) {
         this.name = name;
     }
     public void addRental(Rental arg) {
-        rentals.addElement(arg);
+        rentals.add(arg);
     }
 
     public String getName() {
         return name;
     }
 
-    public Vector getRentals() {
-        Enumeration items = rentals.elements();
-        /*while (items.hasMoreElements()) {
-            Rental rent = (Rental) items.nextElement();
-            Movie mov = rent.getMovie();
-            System.out.println("Adding movie > " + mov.getTitle());
-        }
-        System.out.println("> > > > ");*/
+    public ArrayList<Rental> getRentals() {
         return rentals;
     }
 
     public double getBill() {
         double bill = 0;
-        Enumeration rentalsE = rentals.elements();
-        while (rentalsE.hasMoreElements()) {
-            Rental each = (Rental) rentalsE.nextElement();
+        Iterator rentalsE = rentals.iterator();
+        while (rentalsE.hasNext()) {
+            Rental each = (Rental) rentalsE.next();
             bill += each.getMovie().getPrice(each.getDaysRented());
         }
-        System.out.println("Amount owed is  :::   $" + bill + "\n");
+        logger.log(Level.INFO,"Amount owed is  :::   $" + bill + "\n");
         return bill;
     }
 
     public int getPoints() {
         int frequentRenterPoints = 0;
-        Enumeration rentalsE = rentals.elements();
-        while (rentalsE.hasMoreElements()) {
-            Rental each = (Rental) rentalsE.nextElement();
+        Iterator rentalsE = rentals.iterator();
+        while (rentalsE.hasNext()) {
+            Rental each = (Rental) rentalsE.next();
             frequentRenterPoints += each.getMovie().getPoints(each.getDaysRented());
         }
-        System.out.println("You earned :::   " + frequentRenterPoints + " frequent renter points \n");
+        logger.log(Level.INFO,"You earned :::   " + frequentRenterPoints + " frequent renter points \n");
         return frequentRenterPoints;
     }
 }

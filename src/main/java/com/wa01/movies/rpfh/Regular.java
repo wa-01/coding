@@ -1,8 +1,11 @@
 package com.wa01.movies.rpfh;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Regular extends Movie {
 
     public static final double priceFactor = 1.5;
+    private final static Logger logger = Logger.getLogger("com.wa01.movies.rpfh.Regular");
 
     public Regular(String title) {
         super(title);
@@ -19,7 +22,7 @@ public class Regular extends Movie {
         if (daysRented > 2) {
             bill += (daysRented - 2) * priceFactor;
         }
-        System.out.println("Regular movie > " + super.getTitle() + "   $" + bill);
+        logger.log(Level.INFO,"Regular movie > " + super.getTitle() + "   $" + bill);
         return bill;
     }
 }

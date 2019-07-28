@@ -6,9 +6,6 @@ import org.junit.Test;
 
 public class RentalTest {
     private Customer customer;
-    private Release release;
-    private Regular regular;
-    private Children children;
 
     @Before
     public void setUp() {
@@ -28,12 +25,6 @@ public class RentalTest {
 
     @Test
     public void confirmRent() {
-        int result = customer.getPoints();
-        Assert.assertTrue(result > 0);
-    }
-
-    @Test
-    public void confirm() {
         int result = customer.getPoints();
         Assert.assertTrue(result > 0);
     }
