@@ -1,20 +1,20 @@
 package com.wa01.movies.rpfh;
+
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import java.util.Enumeration;
-import java.util.Vector;
-
 class Customer {
     private final String name;
-    private final ArrayList <Rental> rentals = new ArrayList<Rental>();
+    private final List<Rental> rentals = new ArrayList<>();
     private static final Logger logger = Logger.getLogger("com.wa01.movies.rpfh.Customer");
 
     public Customer(String name) {
         this.name = name;
     }
+
     public void addRental(Rental arg) {
         rentals.add(arg);
     }
@@ -23,7 +23,7 @@ class Customer {
         return name;
     }
 
-    public ArrayList<Rental> getRentals() {
+    public List<Rental> getRentals() {
         return rentals;
     }
 
@@ -34,7 +34,8 @@ class Customer {
             Rental each = (Rental) rentalsE.next();
             bill += each.getMovie().getPrice(each.getDaysRented());
         }
-        logger.log(Level.INFO,"Amount owed is  :::   $" + bill + "\n");
+        String message = "Amount owed is  :::   $" + bill + "\n";
+        logger.log(Level.INFO, () -> message);
         return bill;
     }
 
@@ -45,7 +46,8 @@ class Customer {
             Rental each = (Rental) rentalsE.next();
             frequentRenterPoints += each.getMovie().getPoints(each.getDaysRented());
         }
-        logger.log(Level.INFO,"You earned :::   " + frequentRenterPoints + " frequent renter points \n");
+        String message = "You earned :::   " + frequentRenterPoints + " frequent renter points \n";
+        logger.log(Level.INFO, () -> message);
         return frequentRenterPoints;
     }
 }

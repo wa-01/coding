@@ -20,9 +20,9 @@ public class CustomerTest {
 
     @Test
     public void customerHasName() {
-        String customer_name = "Petisa";
-        customer = new Customer(customer_name);
-        Assert.assertEquals(customer_name, customer.getName());
+        String customerName = "Petisa";
+        customer = new Customer(customerName);
+        Assert.assertEquals(customerName, customer.getName());
     }
 
     @Test
