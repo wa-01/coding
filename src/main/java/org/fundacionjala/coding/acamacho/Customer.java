@@ -4,26 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Customer {
-    private String _name;
+    private String name;
     private List<Rental> rentalList = new ArrayList<>();
 
-    public Customer(String name) {
-        _name = name;
+    public Customer(final String name) {
+        this.name = name;
     }
 
-    public void addRental(Rental rental) {
+    public void addRental(final Rental rental) {
         rentalList.add(rental);
     }
 
     public String getName() {
-        return _name;
+        return name;
     }
 
     public String statement() {
         double totalAmount = 0;
 
         StringBuilder result = new StringBuilder(buildMessage());
-        for(Rental rental : rentalList) {
+        for (Rental rental : rentalList) {
             double thisAmount = rental.calculateAmount();
             result.append("\t").append(rental.getMovie().getTitle()).append("\t").append(thisAmount).append("\n");
             totalAmount += thisAmount;
@@ -37,11 +37,12 @@ class Customer {
 
     private int calculateFrequentRenterPoints() {
         int frequentRenterPoints = 0;
-        for(Rental rental : rentalList) {
+        for (Rental rental : rentalList) {
             frequentRenterPoints++;
             // add bonus for a two day new release rental
-            if ((rental.getMovie().getCategory() == Category.NEW_RELEASE)  && rental.getDaysRented() > 1)
+            if ((rental.getMovie().getCategory() == Category.NEW_RELEASE) && rental.getDaysRented() > 1) {
                 frequentRenterPoints++;
+            }
         }
         return frequentRenterPoints;
     }

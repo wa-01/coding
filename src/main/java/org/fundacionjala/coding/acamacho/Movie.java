@@ -4,28 +4,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Movie {
-    private String _title;
-    private Category _category;
+    private String title;
+    private Category category;
 
-    public Movie(String title, Category category) {
-        _title = title;
-        _category = category;
+    public Movie(final String title, final Category category) {
+        this.title = title;
+        this.category = category;
     }
 
     public Category getCategory() {
-        return _category;
+        return category;
     }
 
     public String getTitle() {
-        return _title;
+        return title;
     }
 
-    public double amountCategoryPrice(int daysRented){
+    public double amountCategoryPrice(int daysRented) {
         Map<Category, IPrice> categoryPrice = new HashMap<>();
         categoryPrice.put(Category.REGULAR, new RegularPrice());
         categoryPrice.put(Category.NEW_RELEASE, new NewReleasePrice());
         categoryPrice.put(Category.CHILDREN, new ChildrenPrice());
 
-        return categoryPrice.get(_category).amount(daysRented);
+        return categoryPrice.get(category).amount(daysRented);
     }
 }
