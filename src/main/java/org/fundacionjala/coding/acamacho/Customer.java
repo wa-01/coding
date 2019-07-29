@@ -7,7 +7,7 @@ class Customer {
     private String name;
     private List<Rental> rentalList = new ArrayList<>();
 
-    public Customer(final String name) {
+    Customer(final String name) {
         this.name = name;
     }
 

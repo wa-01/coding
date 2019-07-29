@@ -1,8 +1,8 @@
 package org.fundacionjala.coding.acamacho;
 
 public class RegularPrice implements IPrice {
-    private final static double INTEREST = 1.5;
-    private final static int MAX_DAYS = 2;
+    private static final double INTEREST = 1.5;
+    private static final int MAX_DAYS = 2;
 
     @Override
     public double amount(int daysRented) {
