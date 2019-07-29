@@ -1,8 +1,6 @@
 package org.fundacionjala.coding.rmendoza;
 
-import java.util.Enumeration;
-
-public class Amount {
+class Amount {
 
     public static final int NEW_RELEASE_DAILY_CHARGE = 3;
     public static final double REGULAR_DAILY_CHARGE = 1.5D;

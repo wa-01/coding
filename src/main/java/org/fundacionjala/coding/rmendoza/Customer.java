@@ -18,7 +18,7 @@ class Customer {
         customerRentals.addElement(rentalValue);
     }
 
-    public String getCustomerName() {
+    public final String getCustomerName() {
         return customerName;
     }
 
@@ -34,7 +34,8 @@ class Customer {
             switch (each.getMovie().getMoviePriceCode()) {
                 case Movie.REGULAR:
                     thisAmount += amount.REGULAR_AMOUNT;
-                    if (each.getDaysRented() > amount.ALLOWED_REGULAR_RENTAL_DAYS)
+                    if
+                        (each.getDaysRented() > amount.ALLOWED_REGULAR_RENTAL_DAYS)
                         thisAmount += (each.getDaysRented() - amount.ALLOWED_REGULAR_RENTAL_DAYS) * amount.REGULAR_DAILY_CHARGE;
                     break;
                 case Movie.NEW_RELEASE:
@@ -45,6 +46,8 @@ class Customer {
                     if (each.getDaysRented() > amount.ALLOWED_CHILDRENS_RENTAL_DAYS)
                         thisAmount += (each.getDaysRented() - amount.ALLOWED_CHILDRENS_RENTAL_DAYS) * amount.CHILDREN_DAILY_CHARGE;
                     break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + each.getMovie().getMoviePriceCode());
             }
             // add frequent renter points
             frequentRenterPoints++;
