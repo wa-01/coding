@@ -8,14 +8,14 @@ class Customer {
     private final List<Rental> rentalList;
     private double totalAmount;
     private int frequentRenterPoints;
-    private String result;
+    private StringBuilder result;
 
     Customer(final String name) {
         this.name = name;
         this.rentalList = new ArrayList<>();
         this.totalAmount = 0;
         this.frequentRenterPoints = 0;
-        this.result = "Rental Record for " + getName() + "\n";
+        this.result = new StringBuilder("Rental Record for " + getName() + "\n");
     }
 
     void addRental(final Rental rental) {
@@ -35,40 +35,33 @@ class Customer {
     }
 
     String statement() {
-        calculateTotalAmount();
-        calculateFrequentRenterPoints();
-        setCustomerStatement();
-        return result;
+        for (Rental rental : rentalList) {
+            calculateTotalAmount(rental);
+            calculateFrequentRenterPoints(rental);
+            setCustomerStatement(rental);
+        }
+        result.append("Amount owed is ");
+        result.append(totalAmount);
+        result.append("\n");
+        result.append("You earned ");
+        result.append(frequentRenterPoints);
+        result.append(" frequent renter points");
+        return result.toString();
     }
 
-    private void calculateTotalAmount() {
-        for (Rental rental : rentalList) {
-            totalAmount += rental.getMovie().getAmountOwed(rental.getDaysRented());
-        }
+    private void calculateTotalAmount(final Rental rental) {
+        totalAmount += rental.getMovie().getAmountOwed(rental.getDaysRented());
     }
 
-    private void calculateFrequentRenterPoints() {
-        for (Rental rental : rentalList) {
-            frequentRenterPoints++;
-            if ((rental.getMovie() instanceof MovieNewRelease)
-                    &&
-                    rental.getDaysRented() > 1) {
-                frequentRenterPoints++;
-            }
-        }
+    private void calculateFrequentRenterPoints(final Rental rental) {
+        frequentRenterPoints += rental.getFrequentRentalPoints();
     }
 
-    private void setCustomerStatement() {
-        for (Rental rental : rentalList) {
-            result += "\t"
-                    + rental.getMovie().getTitle() + "\t"
-                    + rental.getMovie().getAmountOwed(rental.getDaysRented())
-                    + "\n";
-        }
-        result += "Amount owed is "
-                + totalAmount
-                + "\n";
-        result += "You earned " + frequentRenterPoints
-                + " frequent renter points";
+    private void setCustomerStatement(final Rental rental) {
+        result.append("\t");
+        result.append(rental.getMovie().getTitle());
+        result.append("\t");
+        result.append(rental.getMovie().getAmountOwed(rental.getDaysRented()));
+        result.append("\n");
     }
 }

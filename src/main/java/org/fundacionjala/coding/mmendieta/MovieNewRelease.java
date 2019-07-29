@@ -11,4 +11,9 @@ public class MovieNewRelease extends Movie {
     public double getAmountOwed(int daysRented) {
         return daysRented * MOVIE_COST;
     }
+
+    @Override
+    int getFrequentRenterPoints() {
+        return 2;
+    }
 }

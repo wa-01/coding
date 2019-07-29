@@ -12,4 +12,6 @@ abstract class Movie {
     }
 
     abstract double getAmountOwed(int daysRented);
+
+    abstract int getFrequentRenterPoints();
 }

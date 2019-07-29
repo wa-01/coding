@@ -17,4 +17,9 @@ public class MovieRegular extends Movie {
         }
         return thisAmount;
     }
+
+    @Override
+    int getFrequentRenterPoints() {
+        return 1;
+    }
 }

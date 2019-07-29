@@ -13,6 +13,10 @@ class Rental {
         return daysRented;
     }
 
+    public int getFrequentRentalPoints() {
+        return (daysRented  > 1) ? movie.getFrequentRenterPoints() : 1;
+    }
+
     Movie getMovie() {
         return movie;
     }
