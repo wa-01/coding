@@ -1,14 +1,17 @@
 package org.fundacionjala.coding.mfuentes;
 
 public class RegularPrice extends Price {
-    public RegularPrice () {
-        super(Movie.REGULAR);
+
+    @Override
+    int getPriceCode() {
+        return Movie.REGULAR;
     }
 
-    public double amount ( int daysRented ) {
-        double thisAmount = 2;
-        if (daysRented > 2) {
-            thisAmount += (daysRented - 2) * 1.5;
+    public double amount(int daysRented) {
+        int day = 2;
+        double thisAmount = day;
+        if (daysRented > day) {
+            thisAmount += (daysRented - day) * 1.5;
 
         }
         return thisAmount;

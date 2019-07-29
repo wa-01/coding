@@ -3,9 +3,8 @@ package org.fundacionjala.coding.mfuentes;
 public class Rental {
     private Movie movie;
     private int daysRented;
-//    private Price price;
 
-    public Rental ( Movie movie, int daysRented ) {
+    public Rental(Movie movie, int daysRented) {
         this.movie = movie;
         this.daysRented = daysRented;
     }

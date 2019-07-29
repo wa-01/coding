@@ -1,17 +1,22 @@
 package org.fundacionjala.coding.mfuentes;
 
 public class NewReleasePrice extends Price {
-    public NewReleasePrice () {
-        super(Movie.NEW_RELEASE);
-    }
-    public double amount ( int daysRented ) {
-        return (double)(daysRented * 3);
+
+    @Override
+    int getPriceCode() {
+        return Movie.NEW_RELEASE;
     }
 
-    public int renterPoints ( int daysRented ){
-        if (daysRented > 1)
-            return 2;
+    public double amount(int daysRented) {
+        return (double) (daysRented * 3);
+    }
+
+    public int renterPoints(int daysRented) {
+        int day = 1;
+        int day1 = 2;
+        if (daysRented > day)
+            return day1;
         else
-            return 1;
+            return day;
     }
 }
