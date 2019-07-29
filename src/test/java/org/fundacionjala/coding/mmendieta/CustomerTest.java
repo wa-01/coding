@@ -24,6 +24,7 @@ public class CustomerTest {
         Customer customer = new Customer("Test");
         customer.addRental(new Rental(new MovieNewRelease("The Revenant"), TWO_DAYS_RENTED));
         customer.addRental(new Rental(new MovieRegular("Terminator"), TWO_DAYS_RENTED));
+        customer.statement();
         Assert.assertEquals("Test", customer.getName());
     }
 
@@ -31,6 +32,7 @@ public class CustomerTest {
     public void testShowCustomerMovieChildrenTotalAmount() {
         Customer customer = new Customer("TestChildren");
         customer.addRental(new Rental(new MovieChildrens("Pokemon"), TWO_DAYS_RENTED));
+        customer.statement();
         Assert.assertEquals(EXPECTED_AMOUNT_1_5, customer.getTotalAmount(), DELTA);
     }
 
@@ -38,6 +40,7 @@ public class CustomerTest {
     public void testShowCustomerMovieDaysFrequentRetenerLessThanOne() {
         Customer customer = new Customer("TestChildrenDaysFrequentRetenerLessThanOne");
         customer.addRental(new Rental(new MovieNewRelease("Avengers V"), ZERO_DAYS_RENTED));
+        customer.statement();
         Assert.assertEquals(1, customer.getFrequentRenterPoints());
     }
 
@@ -45,6 +48,7 @@ public class CustomerTest {
     public void testMovieRegularGetAmountOwed() {
         Customer customer = new Customer("testMovieRegularGetAmountOwed");
         customer.addRental(new Rental(new MovieRegular("La Llorona"), THREE_DAYS_RENTED));
+        customer.statement();
         Assert.assertEquals(EXPECTED_AMOUNT_3_5, customer.getTotalAmount(), DELTA);
     }
 
@@ -52,6 +56,7 @@ public class CustomerTest {
     public void testMovieChildrensGetAmountOwed() {
         Customer customer = new Customer("testMovieChildrensGetAmountOwed");
         customer.addRental(new Rental(new MovieChildrens("Godzilla"), FOUR_DAYS_RENTED));
+        customer.statement();
         Assert.assertEquals(EXPECTED_AMOUNT_3_0, customer.getTotalAmount(), DELTA);
     }
 }
