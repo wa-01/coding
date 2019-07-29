@@ -5,7 +5,7 @@ public class ChildrenPrice extends Price {
     int getPriceCode() {
         return Movie.CHILDREN;
     }
-
+    @Override
     public double amount(int daysRented) {
         int day = 3;
         double thisAmount = 1.5;

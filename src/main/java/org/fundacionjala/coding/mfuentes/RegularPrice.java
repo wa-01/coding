@@ -6,7 +6,7 @@ public class RegularPrice extends Price {
     int getPriceCode() {
         return Movie.REGULAR;
     }
-
+    @Override
     public double amount(int daysRented) {
         int day = 2;
         double thisAmount = day;
