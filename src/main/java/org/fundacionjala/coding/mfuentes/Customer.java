@@ -53,7 +53,7 @@ public class Customer {
     private int frequentRenterPoints ( List<Rental> myRentals1 ) {
         int totalRenterPoints = 0;
         for (Rental each : myRentals1) {
-            totalRenterPoints += each.renterPoints(each.getDaysRented());
+            totalRenterPoints += each.renterPoints();
         }
         return totalRenterPoints;
     }

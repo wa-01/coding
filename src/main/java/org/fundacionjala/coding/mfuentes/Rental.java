@@ -21,7 +21,7 @@ public class Rental {
         return getMovie().amount(getDaysRented());
     }
 
-    int renterPoints(int daysRented) {
+    int renterPoints() {
 
         return getMovie().renterPoints(daysRented);
     }
