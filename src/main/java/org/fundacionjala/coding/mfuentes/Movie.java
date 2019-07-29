@@ -1,36 +1,30 @@
 package org.fundacionjala.coding.mfuentes;
 
 public class Movie {
-    public static final int CHILDRENS = 2;
-    public static final int REGULAR = 0;
-    public static final int NEW_RELEASE = 1;
-    private String _title;
-    private int _priceCode;
-    private Price _price;
+    static final int CHILDREN = 2;
+    static final int REGULAR = 0;
+    static final int NEW_RELEASE = 1;
+    private String movie_title;
+    //    private int movie_priceCode;
+    private Price price;
 
-
-    public Movie ( String title, Price price ) {
-        _title = title;
-        _price = price;
+    public Movie(String title, Price price) {
+        movie_title = title;
+        this.price = price;
     }
-
-    public int getPriceCode () {
-        return _price.priceCode();
-    }
-
-//    public void setPriceCode ( int arg ) {
-//        _price = new Price(arg);
+//    public int getPriceCode () {
+//        return price.priceCode();
 //    }
 
-    public String getTitle () {
-        return _title;
+    String getTitle() {
+        return movie_title;
     }
 
-    public double amount ( int daysRented ) {
-        return _price.amount(daysRented);
+    double amount(int daysRented) {
+        return price.amount(daysRented);
     }
 
-    public int renterPoints ( int daysRented ) {
-        return _price.renterPoints(daysRented);
+    int renterPoints(int daysRented) {
+        return price.renterPoints(daysRented);
     }
 }

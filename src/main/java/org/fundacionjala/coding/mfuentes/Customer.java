@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Customer {
-    private String _name;
-    private List<Rental> myRentals = new ArrayList<Rental>();
+
+    private String customer_name;
+
+    private List<Rental> myRentals = new ArrayList<>();
+
 
     public Customer ( String name ) {
-        _name = name;
+        customer_name = name;
     }
 
     public void addRental ( Rental rental ) {
@@ -16,27 +19,26 @@ public class Customer {
     }
 
     public String getName () {
-        return _name;
+        return customer_name;
     }
 
     public String statement () {
 
         String name = getName();
-        String result = header(name);
+        StringBuilder result = new StringBuilder(header(name));
 
         for (Rental each : myRentals) {
             double thisAmount = each.amount();
-            result += "\t" + each.getMovie().getTitle() + "\t" +
-                    String.valueOf(thisAmount) + "\n";
+            result.append("\t").append(each.getMovie().getTitle()).append("\t").append(thisAmount).append("\n");
         }
 
         double totalAmount = totalAmount(this.myRentals);
 
         int frequentRenterPoints = frequentRenterPoints(this.myRentals);
 
-        result += footer(totalAmount, frequentRenterPoints);
+        result.append(footer(totalAmount, frequentRenterPoints));
 
-        return result;
+        return result.toString();
     }
 
     private double totalAmount ( Iterable<Rental> rentals ) {
@@ -62,9 +64,9 @@ public class Customer {
     }
 
     private String footer ( double totalAmount, int frequentRenterPoints ) {
-        String footer1 = "Amount owed is " + String.valueOf(totalAmount) +
+        String footer1 = "Amount owed is " + totalAmount +
                 "\n";
-        String footer2 = "You earned " + String.valueOf(frequentRenterPoints)
+        String footer2 = "You earned " + frequentRenterPoints
                 +
                 " frequent renter points";
         return footer1 + footer2;

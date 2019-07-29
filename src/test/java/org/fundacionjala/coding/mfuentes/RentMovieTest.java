@@ -37,9 +37,9 @@ public class RentMovieTest {
     }
 
     @Test
-    public void MovieRentalChildrensPrice () {
+    public void MovieRentalChildrenPrice () {
         Customer customer = new Customer("Magali");
-        customer.addRental(new Rental(new Movie("Madagascar", new ChildrensPrice()), 3));
+        customer.addRental(new Rental(new Movie("Madagascar", new ChildrenPrice()), 3));
         String expected = "Rental Record for Magali\n" +
                 "\tMadagascar\t1.5\n" +
                 "Amount owed is 1.5\n" +

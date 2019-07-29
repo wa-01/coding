@@ -1,28 +1,28 @@
 package org.fundacionjala.coding.mfuentes;
 
 public class Rental {
-    private Movie _movie;
-    private int _daysRented;
-    private Price _price;
+    private Movie movie;
+    private int daysRented;
+//    private Price price;
 
     public Rental ( Movie movie, int daysRented ) {
-        _movie = movie;
-        _daysRented = daysRented;
+        this.movie = movie;
+        this.daysRented = daysRented;
     }
 
-    public int getDaysRented () {
-        return _daysRented;
+    int getDaysRented() {
+        return daysRented;
     }
 
-    public Movie getMovie () {
-        return _movie;
+    Movie getMovie() {
+        return movie;
     }
 
-    public double amount () {
+    double amount() {
         return getMovie().amount(getDaysRented());
     }
 
-    public int renterPoints ( int daysRented ) {
+    int renterPoints(int daysRented) {
 
         return getMovie().renterPoints(daysRented);
     }
