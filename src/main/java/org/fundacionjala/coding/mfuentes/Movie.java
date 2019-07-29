@@ -6,23 +6,31 @@ public class Movie {
     public static final int NEW_RELEASE = 1;
     private String _title;
     private int _priceCode;
+    private Price _price;
 
-    public Movie(String title, int priceCode) {
+
+    public Movie ( String title, Price price ) {
         _title = title;
-//        _priceCode = priceCode;
-        setPriceCode(priceCode);
+        _price = price;
     }
 
-    public int getPriceCode() {
-        return _priceCode;
+    public int getPriceCode () {
+        return _price.priceCode();
     }
 
-    public void setPriceCode(int arg) {
-        _priceCode = arg;
-    }
+//    public void setPriceCode ( int arg ) {
+//        _price = new Price(arg);
+//    }
 
-    public String getTitle() {
+    public String getTitle () {
         return _title;
     }
 
+    public double amount ( int daysRented ) {
+        return _price.amount(daysRented);
+    }
+
+    public int renterPoints ( int daysRented ) {
+        return _price.renterPoints(daysRented);
+    }
 }
