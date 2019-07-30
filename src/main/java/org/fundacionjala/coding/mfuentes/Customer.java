@@ -5,13 +5,13 @@ import java.util.List;
 
 public class Customer {
 
-    private String customer_name;
+    private String customerName;
 
     private List<Rental> myRentals = new ArrayList<>();
 
 
     public Customer ( String name ) {
-        customer_name = name;
+        customerName = name;
     }
 
     public void addRental ( Rental rental ) {
@@ -19,7 +19,7 @@ public class Customer {
     }
 
     public String getName () {
-        return customer_name;
+        return customerName;
     }
 
     public String statement () {

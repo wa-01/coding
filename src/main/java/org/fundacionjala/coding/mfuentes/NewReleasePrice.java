@@ -1,9 +1,9 @@
 package org.fundacionjala.coding.mfuentes;
 
-public class NewReleasePrice extends Price {
+public class NewReleasePrice implements Price {
 
     @Override
-    int getPriceCode() {
+    public int getPriceCode() {
         return Movie.NEW_RELEASE;
     }
 
@@ -12,7 +12,6 @@ public class NewReleasePrice extends Price {
         return (double) (daysRented * 3);
     }
 
-    @Override
     public int renterPoints(int daysRented) {
         int day = 1;
         int day1 = 2;

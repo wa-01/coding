@@ -1,9 +1,9 @@
 package org.fundacionjala.coding.mfuentes;
 
-public class RegularPrice extends Price {
+public class RegularPrice implements Price {
 
     @Override
-    int getPriceCode() {
+    public int getPriceCode() {
         return Movie.REGULAR;
     }
     @Override

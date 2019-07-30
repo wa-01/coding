@@ -4,11 +4,11 @@ public class Movie {
     static final int CHILDREN = 2;
     static final int REGULAR = 0;
     static final int NEW_RELEASE = 1;
-    private String movie_title;
+    private String movieTitle;
     private Price price;
 
     public Movie(String title, Price price) {
-        movie_title = title;
+        movieTitle = title;
         this.price = price;
     }
 
@@ -17,7 +17,7 @@ public class Movie {
     }
 
     String getTitle() {
-        return movie_title;
+        return movieTitle;
     }
 
     double amount(int daysRented) {

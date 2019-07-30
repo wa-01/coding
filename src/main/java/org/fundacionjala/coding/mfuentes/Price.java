@@ -1,13 +1,12 @@
 package org.fundacionjala.coding.mfuentes;
 
-public abstract class Price {
+public interface Price {
 
-    abstract int getPriceCode();
+    int getPriceCode();
 
-    abstract public double amount(int daysRented);
+    double amount(int daysRented);
 
-    public int renterPoints(int daysRented) {
-
+    default int renterPoints(int daysRented) {
         return 1;
     }
 }

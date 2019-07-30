@@ -1,8 +1,8 @@
 package org.fundacionjala.coding.mfuentes;
 
-public class ChildrenPrice extends Price {
+public class ChildrenPrice implements Price {
     @Override
-    int getPriceCode() {
+    public int getPriceCode() {
         return Movie.CHILDREN;
     }
     @Override
