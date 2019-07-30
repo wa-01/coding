@@ -9,11 +9,11 @@ public class Customer {
 
     private List<Rental> myRentals = new ArrayList<>();
 
-    public Customer(String name) {
+    public Customer(final String name) {
         customerName = name;
     }
 
-    public void addRental(Rental rental) {
+    public void addRental(final Rental rental) {
         myRentals.add(rental);
     }
 
@@ -40,7 +40,7 @@ public class Customer {
         return result.toString();
     }
 
-    private double totalAmount(Iterable<Rental> rentals) {
+    private double totalAmount(final Iterable<Rental> rentals) {
         double totalAmount = 0;
         for (Rental each : rentals) {
             double thisAmount = each.amount();
@@ -49,7 +49,7 @@ public class Customer {
         return totalAmount;
     }
 
-    private int frequentRenterPoints(List<Rental> myRentals1) {
+    private int frequentRenterPoints(final List<Rental> myRentals1) {
         int totalRenterPoints = 0;
         for (Rental each : myRentals1) {
             totalRenterPoints += each.renterPoints();
@@ -57,7 +57,7 @@ public class Customer {
         return totalRenterPoints;
     }
 
-    private String header(String name) {
+    private String header(final String name) {
         return "Rental Record for " + name + "\n";
     }
 
