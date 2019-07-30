@@ -1,7 +1,7 @@
 package org.fundacionjala.coding.mfuentes;
 
 public class NewReleasePrice implements Price {
-    private static final double MOVIE_COST = 3;
+    private static final double movieCost = 3;
 
     @Override
     public int getPriceCode() {
@@ -10,7 +10,7 @@ public class NewReleasePrice implements Price {
 
     @Override
     public double amount(int daysRented) {
-        return (daysRented * MOVIE_COST);
+        return (daysRented * movieCost);
     }
 
     @Override

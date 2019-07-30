@@ -1,8 +1,8 @@
 package org.fundacionjala.coding.mfuentes;
 
 public class ChildrenPrice implements Price {
-    private static double MOVIE_COST = 1.5;
-    private static final double MOVIE_DAYS = 3;
+    private static double movieCost = 1.5;
+    private static final double movieDays = 3;
 
     @Override
     public int getPriceCode() {
@@ -12,9 +12,9 @@ public class ChildrenPrice implements Price {
     @Override
     public double amount(int daysRented) {
 
-        if (daysRented > MOVIE_DAYS) {
-            MOVIE_COST += (daysRented - MOVIE_DAYS) * MOVIE_COST;
+        if (daysRented > movieDays) {
+            movieCost += (daysRented - movieDays) * movieCost;
         }
-        return MOVIE_COST;
+        return movieCost;
     }
 }
