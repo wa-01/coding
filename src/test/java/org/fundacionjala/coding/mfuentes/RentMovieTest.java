@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class RentMovieTest {
+    
     @Test
     public void movieRentalGetCustomerNameTest() {
         Customer c = new Customer("Angy");

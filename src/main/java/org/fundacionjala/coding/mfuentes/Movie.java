@@ -1,6 +1,7 @@
 package org.fundacionjala.coding.mfuentes;
 
 public class Movie {
+
     static final int CHILDREN = 2;
     static final int REGULAR = 0;
     static final int NEW_RELEASE = 1;
