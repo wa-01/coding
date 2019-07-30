@@ -9,20 +9,19 @@ public class Customer {
 
     private List<Rental> myRentals = new ArrayList<>();
 
-
-    public Customer ( String name ) {
+    public Customer(String name) {
         customerName = name;
     }
 
-    public void addRental ( Rental rental ) {
+    public void addRental(Rental rental) {
         myRentals.add(rental);
     }
 
-    public String getName () {
+    public String getName() {
         return customerName;
     }
 
-    public String statement () {
+    public String statement() {
 
         String name = getName();
         StringBuilder result = new StringBuilder(header(name));
@@ -41,7 +40,7 @@ public class Customer {
         return result.toString();
     }
 
-    private double totalAmount ( Iterable<Rental> rentals ) {
+    private double totalAmount(Iterable<Rental> rentals) {
         double totalAmount = 0;
         for (Rental each : rentals) {
             double thisAmount = each.amount();
@@ -50,7 +49,7 @@ public class Customer {
         return totalAmount;
     }
 
-    private int frequentRenterPoints ( List<Rental> myRentals1 ) {
+    private int frequentRenterPoints(List<Rental> myRentals1) {
         int totalRenterPoints = 0;
         for (Rental each : myRentals1) {
             totalRenterPoints += each.renterPoints();
@@ -58,12 +57,11 @@ public class Customer {
         return totalRenterPoints;
     }
 
-
-    private String header ( String name ) {
+    private String header(String name) {
         return "Rental Record for " + name + "\n";
     }
 
-    private String footer ( double totalAmount, int frequentRenterPoints ) {
+    private String footer(double totalAmount, int frequentRenterPoints) {
         String footer1 = "Amount owed is " + totalAmount +
                 "\n";
         String footer2 = "You earned " + frequentRenterPoints
