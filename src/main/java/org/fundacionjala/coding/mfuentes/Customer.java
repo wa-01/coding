@@ -62,7 +62,8 @@ public class Customer {
     }
 
     private String footer(double totalAmount, int frequentRenterPoints) {
-        String footer1 = "Amount owed is " + totalAmount +
+        String footer1 = "Amount owed is " + totalAmount
+                +
                 "\n";
         String footer2 = "You earned " + frequentRenterPoints
                 +

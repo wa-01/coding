@@ -10,7 +10,7 @@ public class Rental {
         this.daysRented = daysRented;
     }
 
-    int getDaysRented() {
+    private int getDaysRented() {
         return daysRented;
     }
 
