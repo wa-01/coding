@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-class Customer {
+public class Customer {
     private final String name;
     private final List<Rental> rentals = new ArrayList<>();
     private static final Logger LOGGER = Logger.getLogger("com.wa01.movies.rpfh.Customer");

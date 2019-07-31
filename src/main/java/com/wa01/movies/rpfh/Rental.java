@@ -1,6 +1,6 @@
 package com.wa01.movies.rpfh;
 
-class Rental {
+public class Rental {
     private final Movie movie;
     private int daysRented;
 
