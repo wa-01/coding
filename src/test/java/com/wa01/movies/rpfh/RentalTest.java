@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class RentalTest {
     private Customer customer;
-    private static final Logger logger = Logger.getLogger("com.wa01.movies.rpfh.RentalTest");
+    private static final Logger LOGGER = Logger.getLogger("com.wa01.movies.rpfh.RentalTest");
 
 
     @Before
@@ -16,7 +16,7 @@ public class RentalTest {
         customer = new Customer("Tester");
         customer.addRental(new Rental(new Release("The Revenant"), 1));
         customer.addRental(new Rental(new Regular("Terminator"), 1));
-        customer.addRental(new Rental(new Children("Toy Story"), 1));
+        customer.addRental(new Rental(new Children("Toy Story 2"), 4));
         customer.addRental(new Rental(new Release("Infinity War"), 1));
     }
 
@@ -36,7 +36,7 @@ public class RentalTest {
     @Test
     public void customerCanRentMovies() {
         Assert.assertFalse(customer.getRentals().isEmpty());
-        logger.log(Level.INFO, ()-> "Rental Record for " + customer.getName());
+        LOGGER.log(Level.INFO, ()-> "Rental Record for " + customer.getName());
         Assert.assertTrue(customer.getBill() > 0);
     }
 

@@ -1,13 +1,16 @@
 package com.wa01.movies.rpfh;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Regular extends Movie {
 
     public static final double PRICE_FACTOR = 1.5;
-    private static final Logger logger = Logger.getLogger("com.wa01.movies.rpfh.Regular");
+    public static final double PRICE = 2;
+    public static final int DAYS = 2;
+    private static final Logger LOGGER = Logger.getLogger("com.wa01.movies.rpfh.Regular");
 
-    public Regular(String title) {
+    public Regular(final String title) {
         super(title);
     }
 
@@ -18,12 +21,12 @@ public class Regular extends Movie {
 
     @Override
     public double getPrice(int daysRented) {
-        double bill = 2;
-        if (daysRented > 2) {
-            bill += (daysRented - 2) * PRICE_FACTOR;
+        double bill = PRICE;
+        if (daysRented > DAYS) {
+            bill += (daysRented - DAYS) * PRICE_FACTOR;
         }
         String message = super.getTitle() + "   $" + bill;
-        logger.log(Level.INFO, ()-> "Regular movie > " + message);
+        LOGGER.log(Level.INFO, () -> "Regular movie > " + message);
         return bill;
     }
 }

@@ -1,12 +1,13 @@
 package com.wa01.movies.rpfh;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Release extends Movie {
     public static final double PRICE_FACTOR = 3.0;
-    private static final Logger logger = Logger.getLogger("com.wa01.movies.rpfh.Release");
+    private static final Logger LOGGER = Logger.getLogger("com.wa01.movies.rpfh.Release");
 
-    public Release(String title) {
+    public Release(final String title) {
         super(title);
     }
 
@@ -19,7 +20,7 @@ public class Release extends Movie {
     public double getPrice(int daysRented) {
         double bill = daysRented * PRICE_FACTOR;
         String message = super.getTitle() + "   $" + bill;
-        logger.log(Level.INFO, ()-> "Release movie > " + message);
+        LOGGER.log(Level.INFO, () -> "Release movie > " + message);
         return bill;
     }
 }

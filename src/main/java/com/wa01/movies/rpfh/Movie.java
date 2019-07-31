@@ -3,7 +3,7 @@ package com.wa01.movies.rpfh;
 public abstract class Movie {
     private final String title;
 
-    public Movie(String title) {
+    public Movie(final String title) {
         this.title = title;
     }
 

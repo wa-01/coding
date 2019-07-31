@@ -9,13 +9,13 @@ import java.util.logging.Logger;
 class Customer {
     private final String name;
     private final List<Rental> rentals = new ArrayList<>();
-    private static final Logger logger = Logger.getLogger("com.wa01.movies.rpfh.Customer");
+    private static final Logger LOGGER = Logger.getLogger("com.wa01.movies.rpfh.Customer");
 
-    public Customer(String name) {
+    public Customer(final String name) {
         this.name = name;
     }
 
-    public void addRental(Rental arg) {
+    public void addRental(final Rental arg) {
         rentals.add(arg);
     }
 
@@ -35,7 +35,7 @@ class Customer {
             bill += each.getMovie().getPrice(each.getDaysRented());
         }
         String message = "Amount owed is  :::   $" + bill + "\n";
-        logger.log(Level.INFO, () -> message);
+        LOGGER.log(Level.INFO, () -> message);
         return bill;
     }
 
@@ -47,7 +47,7 @@ class Customer {
             frequentRenterPoints += each.getMovie().getPoints(each.getDaysRented());
         }
         String message = "You earned :::   " + frequentRenterPoints + " frequent renter points \n";
-        logger.log(Level.INFO, () -> message);
+        LOGGER.log(Level.INFO, () -> message);
         return frequentRenterPoints;
     }
 }

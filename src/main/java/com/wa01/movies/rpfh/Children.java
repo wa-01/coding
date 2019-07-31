@@ -1,23 +1,26 @@
 package com.wa01.movies.rpfh;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Children extends Movie {
     public static final double PRICE_FACTOR = 1.5;
-    private static final Logger logger = Logger.getLogger("com.wa01.movies.rpfh.Children");
+    public static final double PRICE = 1.5;
+    public static final int DAYS = 3;
+    private static final Logger LOGGER = Logger.getLogger("com.wa01.movies.rpfh.Children");
 
-    public Children(String title) {
+    public Children(final String title) {
         super(title);
     }
 
     @Override
     public double getPrice(int daysRented) {
-        double bill = 1.5;
-        if (daysRented > 3) {
-            bill += (daysRented - 3) * PRICE_FACTOR;
+        double bill = PRICE;
+        if (daysRented > DAYS) {
+            bill += (daysRented - DAYS) * PRICE_FACTOR;
         }
         String message = super.getTitle() + "   $" + bill;
-        logger.log(Level.INFO, ()-> "Children movie > " + message);
+        LOGGER.log(Level.INFO, () -> "Children movie > " + message);
 
         return bill;
     }
