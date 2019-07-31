@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class RentMovieTest {
-    private int daysRented = 3;
+    private final static int DAYS_RENTED = 3;
     @Test
     public void movieRentalGetCustomerNameTest() {
         Customer c = new Customer("Angy");
@@ -15,7 +15,7 @@ public class RentMovieTest {
     @Test
     public void movieRentalRegularPrice() {
         Customer customer = new Customer("Maria");
-        customer.addRental(new Rental(new Movie("The King", new RegularPrice()), daysRented));
+        customer.addRental(new Rental(new Movie("The King", new RegularPrice()), DAYS_RENTED));
         String expected = "Rental Record for Maria\n"
                 + "\tThe King\t3.5\n"
                 + "Amount owed is 3.5\n"
@@ -27,7 +27,7 @@ public class RentMovieTest {
     @Test
     public void movieRentalNewReleasePrice() {
         Customer customer = new Customer("Laura");
-        customer.addRental(new Rental(new Movie("Star Wars", new NewReleasePrice()), daysRented));
+        customer.addRental(new Rental(new Movie("Star Wars", new NewReleasePrice()), DAYS_RENTED));
         String expected = "Rental Record for Laura\n"
                 + "\tStar Wars\t9.0\n"
                 + "Amount owed is 9.0\n"
@@ -39,7 +39,7 @@ public class RentMovieTest {
     @Test
     public void movieRentalChildrenPrice() {
         Customer customer = new Customer("Sofia");
-        customer.addRental(new Rental(new Movie("Madagascar", new ChildrenPrice()), daysRented));
+        customer.addRental(new Rental(new Movie("Madagascar", new ChildrenPrice()), DAYS_RENTED));
         String expected = "Rental Record for Sofia\n"
                 + "\tMadagascar\t1.5\n"
                 + "Amount owed is 1.5\n"
