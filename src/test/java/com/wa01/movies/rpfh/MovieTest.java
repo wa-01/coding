@@ -26,7 +26,7 @@ public class MovieTest {
     @Test
     public void movieHasPrice() {
         Assert.assertTrue(release.getPrice(1) > 0);
-        Assert.assertTrue(regular.getPrice(1)> 0);
-        Assert.assertTrue(children.getPrice(1)> 0);
+        Assert.assertTrue(regular.getPrice(1) > 0);
+        Assert.assertTrue(children.getPrice(1) > 0);
     }
 }

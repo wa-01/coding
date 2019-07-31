@@ -12,7 +12,7 @@ public class CustomerTest {
     private Children children;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         release = new Release("Captain Marvel");
         regular = new Regular("New Regular Movie");
         children = new Children("New Children Movie");
