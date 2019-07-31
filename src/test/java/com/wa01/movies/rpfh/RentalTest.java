@@ -10,9 +10,9 @@ import java.util.logging.Logger;
 public class RentalTest {
     private Customer customer;
     private static final Logger LOGGER = Logger.getLogger("com.wa01.movies.rpfh.RentalTest");
-    public static int DAYS_RENTED_REGULAR = 4;
-    public static int DAYS_RENTED_RELEASE = 2;
-    public static int DAYS_RENTED_CHILDREN = 5;
+    private static int DAYS_RENTED_REGULAR = 4;
+    private static int DAYS_RENTED_RELEASE = 2;
+    private static int DAYS_RENTED_CHILDREN = 5;
 
     @Before
     public void setUp() {
