@@ -10,15 +10,17 @@ import java.util.logging.Logger;
 public class RentalTest {
     private Customer customer;
     private static final Logger LOGGER = Logger.getLogger("com.wa01.movies.rpfh.RentalTest");
-
+    public static int DAYS_RENTED_REGULAR = 4;
+    public static int DAYS_RENTED_RELEASE = 2;
+    public static int DAYS_RENTED_CHILDREN = 5;
 
     @Before
     public void setUp() {
         customer = new Customer("Tester");
-        customer.addRental(new Rental(new Release("The Revenant"), 1));
-        customer.addRental(new Rental(new Regular("Terminator"), 1));
-        customer.addRental(new Rental(new Children("Toy Story 2"), 4));
-        customer.addRental(new Rental(new Release("Infinity War"), 1));
+        customer.addRental(new Rental(new Release("The Revenant"), DAYS_RENTED_RELEASE));
+        customer.addRental(new Rental(new Regular("Terminator"), DAYS_RENTED_REGULAR));
+        customer.addRental(new Rental(new Children("Toy Story 2"), DAYS_RENTED_CHILDREN));
+        customer.addRental(new Rental(new Release("Infinity War"), DAYS_RENTED_RELEASE));
     }
 
     @Test
