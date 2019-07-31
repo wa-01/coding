@@ -4,3 +4,8 @@
 /out/
 *.iml
 /java/
+/gradle/
+gradlew
+gradlew.bat
+coding.properties
+coding.xml
