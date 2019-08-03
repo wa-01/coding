@@ -5,7 +5,7 @@ import org.fundacionjala.coderefactoring.AbsMovie;
 public class NewReleaseAbsMovie extends AbsMovie {
     private static final double BASE_AMOUNT = 3;
 
-    public NewReleaseAbsMovie(String title) {
+    public NewReleaseAbsMovie(final String title) {
         super(title);
     }
 

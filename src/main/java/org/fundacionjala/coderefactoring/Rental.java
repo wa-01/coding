@@ -6,7 +6,7 @@ public class Rental {
     private AbsMovie absMovie;
     private int rentedDays;
 
-    public Rental(AbsMovie absMovie, int rentedDays) {
+    public Rental(final AbsMovie absMovie, int rentedDays) {
         this.absMovie = absMovie;
         this.rentedDays = rentedDays;
     }
@@ -19,7 +19,7 @@ public class Rental {
         return (isNewRelease(absMovie) && isRentedForMoreThanOneDay()) ? 2 : 1;
     }
 
-    private boolean isNewRelease(AbsMovie absMovie) {
+    private boolean isNewRelease(final AbsMovie absMovie) {
         return (absMovie instanceof NewReleaseAbsMovie);
     }
 

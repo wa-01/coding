@@ -3,11 +3,11 @@ package org.fundacionjala.coderefactoring;
 public abstract class AbsMovie {
     private String title;
 
-    public AbsMovie(String title) {
+    public AbsMovie(final String title) {
         this.title = title;
     }
 
-    public String getTitle() {
+    String getTitle() {
         return title;
     }
 

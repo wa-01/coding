@@ -6,7 +6,7 @@ public class Customer {
     private String name;
     private List<Rental> rentals;
 
-    public Customer(String name, List<Rental> rentals) {
+    public Customer(final String name, final List<Rental> rentals) {
         this.name = name;
         this.rentals = rentals;
     }
@@ -21,7 +21,7 @@ public class Customer {
         return statement.toString();
     }
 
-    private void getIndividualRentalSummary(StringBuilder statement) {
+    private void getIndividualRentalSummary(final StringBuilder statement) {
         for (Rental rental : rentals) {
             statement.append("\t").append(rental.getMovieTitle()).append("\t").append(rental.getAmount()).append("\n");
         }

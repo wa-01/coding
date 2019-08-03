@@ -26,7 +26,7 @@ public class RentalTest {
 
     @Test
     public void returnRenterPointsForAChildrenMovie() {
-        rental = new Rental(new ChildrensAbsMovie("toy Story 4"), 2);
+        rental = new Rental(new ChildrensAbsMovie("toy Story 3"), 2);
 
         assertEquals(1, rental.getRenterPoints());
     }
