@@ -1,14 +1,14 @@
 package org.fundacionjala.coding.jose.colina;
 
 public abstract class Movie {
-    private String _title;
+    private String title;
 
     public Movie(String title){
-        _title = title;
+        this.title = title;
     }
 
     public String getTitle() {
-        return _title;
+        return this.title;
     }
 
     public abstract double getAmount(int daysRented);
