@@ -30,10 +30,9 @@ public class Customer {
             Rental each = (Rental) rentals.nextElement();
             //determine amounts for each line
             thisAmount = each.getMovie().getAmount(each.getDaysRented());
-
             // add frequent renter points
-            frequentRenterPoints += each.getMovie().getFrequentRenterPoints(each.getDaysRented());
             // add bonus for a two day new release rental
+            frequentRenterPoints += each.getMovie().getFrequentRenterPoints(each.getDaysRented());
             //show figures for this rental
             messagesSender.showRental(each.getMovie().getTitle(), thisAmount);
             totalAmount += thisAmount;

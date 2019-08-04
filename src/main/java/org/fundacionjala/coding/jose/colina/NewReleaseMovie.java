@@ -1,10 +1,10 @@
 package org.fundacionjala.coding.jose.colina;
 
-public class newReleaseMovie extends Movie {
+public class NewReleaseMovie extends Movie {
     private static final int FREQUENT_POINTS = 1;
     private static final int BONUS = 1;
 
-    public newReleaseMovie(String title){
+    public NewReleaseMovie(String title){
         super(title);
     }
 

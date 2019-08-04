@@ -1,9 +1,9 @@
 package org.fundacionjala.coding.jose.colina;
 
-public class regularMovie extends Movie {
+public class RegularMovie extends Movie {
     private static final int FREQUENT_POINTS = 1;
 
-    public regularMovie(String title){
+    public RegularMovie(String title){
         super(title);
     }
 
