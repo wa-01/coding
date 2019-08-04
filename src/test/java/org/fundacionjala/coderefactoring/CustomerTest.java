@@ -50,7 +50,7 @@ public class CustomerTest {
         assertEquals(expectedStatement.toString(), customer.statement());
     }
 
-    private void appendRental(final StringBuilder statement,final String movie, double amount) {
+    private void appendRental(final StringBuilder statement, final String movie, double amount) {
         statement.append("\t").append(movie).append("\t").append(amount).append("\n");
     }
 }

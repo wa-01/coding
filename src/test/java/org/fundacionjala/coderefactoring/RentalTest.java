@@ -15,6 +15,9 @@ public class RentalTest {
     private static final int DAYS_RENTED_REGULAR_DELTA = 3;
     private static final int DAYS_RENTED_RELEASE_DELTA = 3;
     private static final int DAYS_RENTED_CHILDREN_DELTA = 3;
+    private static final double DAYS_RENTED_REGULAR_EXPECTED = 3.5;
+    private static final int DAYS_RENTED_RELEASE_EXPECTED = 9;
+    private static final double DAYS_RENTED_CHILDREN_EXPECTED = 1.5;
 
 
     @Test
@@ -42,20 +45,20 @@ public class RentalTest {
     public void returnRentalAmountForARegularMovie() {
         rental = new Rental(new RegularAbsMovie("La bicicleta de los huanca"), DAYS_RENTED_REGULAR_DELTA);
 
-        assertEquals(3.5, rental.getAmount(), 0.0);
+        assertEquals(DAYS_RENTED_REGULAR_EXPECTED, rental.getAmount(), 0.0);
     }
 
     @Test
     public void returnRentalAmountForANewReleaseMovie() {
         rental = new Rental(new NewReleaseAbsMovie("Aladin"), DAYS_RENTED_RELEASE_DELTA);
 
-        assertEquals(9, rental.getAmount(), 0.0);
+        assertEquals(DAYS_RENTED_RELEASE_EXPECTED, rental.getAmount(), 0.0);
     }
 
     @Test
     public void returnRentalAmountForAChildrenMovie() {
         rental = new Rental(new ChildrensAbsMovie("toy Story 4"), DAYS_RENTED_CHILDREN_DELTA);
 
-        assertEquals(1.5, rental.getAmount(), 0.0);
+        assertEquals(DAYS_RENTED_CHILDREN_EXPECTED, rental.getAmount(), 0.0);
     }
 }
