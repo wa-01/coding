@@ -4,27 +4,27 @@ import java.util.Enumeration;
 import java.util.Vector;
 
 public class Customer {
-    private String _name;
-    private Vector _rentals = new Vector();
+    private String name;
+    private Vector rentals = new Vector();
     private MessagesSender messagesSender = new MessagesSender();
 
     public Customer(String name) {
-        _name = name;
+        this.name = name;
     }
 
     public void addRental(Rental arg) {
-        _rentals.addElement(arg);
+        this.rentals.addElement(arg);
     }
 
     public String getName() {
-        return _name;
+        return this.name;
     }
 
     public void statement() {
         double thisAmount;
         double totalAmount = 0;
         int frequentRenterPoints = 0;
-        Enumeration rentals = _rentals.elements();
+        Enumeration rentals = this.rentals.elements();
         messagesSender.showCustomerNameStatement(getName());
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();

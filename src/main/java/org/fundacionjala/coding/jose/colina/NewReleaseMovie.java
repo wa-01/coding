@@ -16,9 +16,11 @@ public class NewReleaseMovie extends Movie {
 
     @Override
     public int getFrequentRenterPoints(int daysRented) {
-        if(daysRented > 1)
+        if(daysRented > 1) {
             return FREQUENT_POINTS + BONUS;
-        else
+        }
+        else {
             return FREQUENT_POINTS;
+        }
     }
 }
