@@ -13,7 +13,7 @@ public class AmountTests {
     private double expectedAmount;
 
     @BeforeClass
-    public static void init(){
+    public static void setUpClass(){
         newReleaseMovie =  new NewReleaseMovie("new release");
         regularMovie =  new RegularMovie("regular");
         childrenMovie =  new ChildrenMovie("children");
