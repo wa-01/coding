@@ -14,7 +14,7 @@ public class MessagesSender {
                 + " frequent renter points");
     }
 
-    public void showRental(String title, double amount){
+    public void showRental(String title, double amount) {
         System.out.println("\t" + title + "\t" + amount);
     }
 }

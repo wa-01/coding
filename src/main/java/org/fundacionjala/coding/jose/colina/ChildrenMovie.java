@@ -3,7 +3,7 @@ package org.fundacionjala.coding.jose.colina;
 public class ChildrenMovie extends Movie {
     private static final int FREQUENT_POINTS = 1;
 
-    public ChildrenMovie(String title){
+    public ChildrenMovie(String title) {
         super(title);
     }
 
