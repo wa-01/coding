@@ -1,6 +1,6 @@
 package org.fundacionjala.coding.jose.colina;
 
-public class Main {
+public final class Main {
     private Main() {
         throw new IllegalStateException("Utility class");
     }
