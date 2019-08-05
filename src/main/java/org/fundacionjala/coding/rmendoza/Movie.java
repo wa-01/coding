@@ -1,17 +1,17 @@
 package org.fundacionjala.coding.rmendoza;
 
-public abstract class Movie {
+abstract class Movie {
 
     abstract double getAmountOwed(int daysRented);
     abstract int getFrequentRenterPoints();
 
-    private String movieTitle;
+    private final String movieTitle;
 
-    public Movie(String movieTitle) {
+    Movie(String movieTitle) {
         this.movieTitle = movieTitle;
     }
 
-    public String getMovieTitle(){
+    String getMovieTitle() {
         return movieTitle;
     }
 }

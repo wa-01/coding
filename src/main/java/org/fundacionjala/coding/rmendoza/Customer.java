@@ -3,14 +3,13 @@ package org.fundacionjala.coding.rmendoza;
 
 class Customer {
 
-    private String customerName;
+    private final String customerName;
 
-    public Customer(String customerName) {
+    Customer(String customerName) {
         this.customerName = customerName;
     }
 
     String getCustomerName() {
         return customerName;
     }
-
 }

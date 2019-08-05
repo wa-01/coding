@@ -4,7 +4,7 @@ public class MovieNewRelease extends Movie {
 
     private Amount amount;
 
-    public MovieNewRelease(String movieTitle) {
+    public MovieNewRelease(final String movieTitle) {
         super(movieTitle);
     }
 

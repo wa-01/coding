@@ -3,7 +3,7 @@ package org.fundacionjala.coding.rmendoza;
 import java.util.ArrayList;
 import java.util.List;
 
-class Statement extends Customer{
+class Statement extends Customer {
 
     private final List<Rental> rentalList;
     private double totalStatement;

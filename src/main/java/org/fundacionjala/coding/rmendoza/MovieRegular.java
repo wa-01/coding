@@ -4,7 +4,7 @@ public class MovieRegular extends Movie {
 
     private Amount amount;
 
-    public MovieRegular(String movieTitle) {
+    public MovieRegular(final String movieTitle) {
         super(movieTitle);
     }
 
@@ -12,14 +12,14 @@ public class MovieRegular extends Movie {
     double getAmountOwed(int daysRented) {
         amount = new Amount();
         double amountOwed = amount.REGULAR_AMOUNT;
-        if(daysRented > amount.ALLOWED_REGULAR_RENTAL_DAYS) {
-            amountOwed += (daysRented - amount.ALLOWED_REGULAR_RENTAL_DAYS)*amount.REGULAR_DAILY_CHARGE;
+        if (daysRented > amount.ALLOWED_REGULAR_RENTAL_DAYS) {
+            amountOwed += (daysRented - amount.ALLOWED_REGULAR_RENTAL_DAYS) * amount.REGULAR_DAILY_CHARGE;
         }
         return amountOwed;
     }
 
     @Override
-    int getFrequentRenterPoints(){
+    int getFrequentRenterPoints() {
         return 1;
     }
 }
