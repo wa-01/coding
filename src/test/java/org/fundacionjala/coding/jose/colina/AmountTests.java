@@ -8,7 +8,15 @@ public class AmountTests {
     private static final int AMOUNT_FACTOR_NEW_RELEASE = 3;
     private static final double AMOUNT_FACTOR_REGULAR = 1.5;
     private static final double AMOUNT_FACTOR_CHILDREN = 1.5;
-    private int rentedDays;
+    private static final double EXPECTED_CHILDREN_LESS_EQUAL_THREE_RENTED_DAYS = 1.5;
+    private static final double EXPECTED_REGULAR_LESS_EQUAL_TWO_RENTED_DAYS = 2;
+    private static final int RENTED_DAYS_NEW_RELEASE = 2;
+    private static final int RENTED_DAYS_LESS_THAN_TWO = 1;
+    private static final int RENTED_DAYS_GREATER_THAN_TWO = 3;
+    private static final int RENTED_DAYS_IS_TWO = 2;
+    private static final int RENTED_DAYS_LESS_THAN_THREE = 2;
+    private static final int RENTED_DAYS_GREATER_THAN_THREE = 5;
+    private static final int RENTED_DAYS_IS_THREE = 3;
     private static NewReleaseMovie newReleaseMovie;
     private static RegularMovie regularMovie;
     private static ChildrenMovie childrenMovie;
@@ -24,55 +32,44 @@ public class AmountTests {
 
     @Test
     public void testGetAmountNewReleaseMovieWith2DaysRented() {
-        rentedDays = 2;
-        actualAmount = newReleaseMovie.getAmount(rentedDays);
-        expectedAmount = rentedDays * AMOUNT_FACTOR_NEW_RELEASE;
+        actualAmount = newReleaseMovie.getAmount(RENTED_DAYS_NEW_RELEASE);
+        expectedAmount = RENTED_DAYS_NEW_RELEASE * AMOUNT_FACTOR_NEW_RELEASE;
         Assert.assertEquals(expectedAmount, actualAmount, 0);
     }
 
     @Test
     public void testGetAmountRegularMovieLessThan2DaysRented() {
-        rentedDays = 1;
-        actualAmount = regularMovie.getAmount(rentedDays);
-        expectedAmount = 2;
-        Assert.assertEquals(expectedAmount, actualAmount, 0);
+        actualAmount = regularMovie.getAmount(RENTED_DAYS_LESS_THAN_TWO);
+        Assert.assertEquals(EXPECTED_REGULAR_LESS_EQUAL_TWO_RENTED_DAYS, actualAmount, 0);
     }
     @Test
     public void testGetAmountRegularMovieWith2DaysRented() {
-        rentedDays = 2;
-        actualAmount = regularMovie.getAmount(rentedDays);
-        expectedAmount = 2;
-        Assert.assertEquals(expectedAmount, actualAmount, 0);
+        actualAmount = regularMovie.getAmount(RENTED_DAYS_IS_TWO);
+        Assert.assertEquals(EXPECTED_REGULAR_LESS_EQUAL_TWO_RENTED_DAYS, actualAmount, 0);
     }
 
     @Test
     public void testGetAmountRegularMovieGreaterThan2DaysRented() {
-        rentedDays = 3;
-        actualAmount = regularMovie.getAmount(rentedDays);
-        expectedAmount = 2 + (rentedDays - 2) * AMOUNT_FACTOR_REGULAR;
+        actualAmount = regularMovie.getAmount(RENTED_DAYS_GREATER_THAN_TWO);
+        expectedAmount = 2 + (RENTED_DAYS_GREATER_THAN_TWO - 2) * AMOUNT_FACTOR_REGULAR;
         Assert.assertEquals(expectedAmount, actualAmount, 0);
     }
 
     @Test
     public void testGetAmountChildrenMovieLessThan3DaysRented() {
-        rentedDays = 2;
-        actualAmount = childrenMovie.getAmount(rentedDays);
-        expectedAmount = 1.5;
-        Assert.assertEquals(expectedAmount, actualAmount, 0);
+        actualAmount = childrenMovie.getAmount(RENTED_DAYS_LESS_THAN_THREE);
+        Assert.assertEquals(EXPECTED_CHILDREN_LESS_EQUAL_THREE_RENTED_DAYS, actualAmount, 0);
     }
     @Test
     public void testGetAmountChildrenMovieWith3DaysRented() {
-        rentedDays = 3;
-        actualAmount = childrenMovie.getAmount(rentedDays);
-        expectedAmount = 1.5;
-        Assert.assertEquals(expectedAmount, actualAmount, 0);
+        actualAmount = childrenMovie.getAmount(RENTED_DAYS_IS_THREE);
+        Assert.assertEquals(EXPECTED_CHILDREN_LESS_EQUAL_THREE_RENTED_DAYS, actualAmount, 0);
     }
 
     @Test
     public void testGetAmountChildrenMovieGreaterThan3DaysRented() {
-        rentedDays = 5;
-        actualAmount = childrenMovie.getAmount(rentedDays);
-        expectedAmount = 1.5 + (rentedDays - 3) * AMOUNT_FACTOR_CHILDREN;
+        actualAmount = childrenMovie.getAmount(RENTED_DAYS_GREATER_THAN_THREE);
+        expectedAmount = 1.5 + (RENTED_DAYS_GREATER_THAN_THREE - 3) * AMOUNT_FACTOR_CHILDREN;
         Assert.assertEquals(expectedAmount, actualAmount, 0);
     }
 
