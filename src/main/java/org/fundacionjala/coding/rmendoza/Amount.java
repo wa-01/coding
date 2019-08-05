@@ -2,7 +2,7 @@ package org.fundacionjala.coding.rmendoza;
 
 class Amount {
 
-    private Amount() {
+    Amount() {
         // not called
     }
 
