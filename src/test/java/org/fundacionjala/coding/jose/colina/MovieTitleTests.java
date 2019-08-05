@@ -9,21 +9,21 @@ public class MovieTitleTests {
     private String actualTitle;
 
     @Test
-    public void getTitleFromNewReleaseMovie(){
+    public void getTitleFromNewReleaseMovie() {
         expectedTitle = "new Release movie";
         movie = new NewReleaseMovie(expectedTitle);
         actualTitle = movie.getTitle();
         Assert.assertEquals(expectedTitle, actualTitle);
     }
     @Test
-    public void getTitleFromRegularMovie(){
+    public void getTitleFromRegularMovie() {
         expectedTitle = "regular movie";
         movie = new RegularMovie(expectedTitle);
         actualTitle = movie.getTitle();
         Assert.assertEquals(expectedTitle, actualTitle);
     }
     @Test
-    public void getTitleFromChildrenMovie(){
+    public void getTitleFromChildrenMovie() {
         expectedTitle = "children movie";
         movie = new ChildrenMovie(expectedTitle);
         actualTitle = movie.getTitle();

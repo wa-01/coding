@@ -1,6 +1,9 @@
 package org.fundacionjala.coding.jose.colina;
 
-import org.junit.*;
+import org.junit.Before;
+import org.junit.After;
+import org.junit.Test;
+import org.junit.Assert;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -14,7 +17,7 @@ public class MessageSenderTests {
     private static PrintStream oldPrintStream;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         messagesSender = new MessagesSender();
         changePrintStream();
     }
@@ -27,13 +30,13 @@ public class MessageSenderTests {
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         System.out.flush();
         System.setOut(oldPrintStream);
     }
 
     @Test
-    public void testShowCustomerNameStatement(){
+    public void testShowCustomerNameStatement() {
         String customerName = "Juan Perez";
         expectedMessage = "Rental Record for " + customerName + System.lineSeparator();
         messagesSender.showCustomerNameStatement(customerName);
@@ -41,7 +44,7 @@ public class MessageSenderTests {
         Assert.assertEquals(expectedMessage, actualMessage);
     }
     @Test
-    public void testShowAmountOwned(){
+    public void testShowAmountOwned() {
         double amount = 10;
         expectedMessage = "Amount owed is " + amount + System.lineSeparator();
         messagesSender.showAmountOwned(amount);
@@ -49,7 +52,7 @@ public class MessageSenderTests {
         Assert.assertEquals(expectedMessage, actualMessage);
     }
     @Test
-    public void testShowFrequentPointsEarned(){
+    public void testShowFrequentPointsEarned() {
         int frequentPoints = 7;
         expectedMessage = "You earned " + frequentPoints + " frequent renter points" + System.lineSeparator();
         messagesSender.showFrequentPointsEarned(frequentPoints);
@@ -57,7 +60,7 @@ public class MessageSenderTests {
         Assert.assertEquals(expectedMessage, actualMessage);
     }
     @Test
-    public void testShowRental(){
+    public void testShowRental() {
         String title = "My movie";
         double amount = 7;
         expectedMessage = "\t" + title + "\t" + amount + System.lineSeparator();

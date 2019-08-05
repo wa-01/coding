@@ -13,7 +13,7 @@ public class FrequentPointsTests {
     private double expectedFrequentPoints;
 
     @BeforeClass
-    public static void setUpClass(){
+    public static void setUpClass() {
         newReleaseMovie =  new NewReleaseMovie("new release");
         regularMovie =  new RegularMovie("regular");
         childrenMovie =  new ChildrenMovie("children");
