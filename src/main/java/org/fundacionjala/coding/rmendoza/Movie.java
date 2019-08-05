@@ -1,28 +1,17 @@
 package org.fundacionjala.coding.rmendoza;
 
-public class Movie {
+public abstract class Movie {
 
-    public static final int REGULAR = 0;
-    public static final int NEW_RELEASE = 1;
-    public static final int CHILDRENS = 2;
+    abstract double getAmountOwed(int daysRented);
+    abstract int getFrequentRenterPoints();
 
     private String movieTitle;
-    private int moviePriceCode;
 
-    public Movie(String title, int priceCode) {
-        this.movieTitle = title;
-        this.moviePriceCode = priceCode;
+    public Movie(String movieTitle) {
+        this.movieTitle = movieTitle;
     }
 
-    public int getMoviePriceCode() {
-        return moviePriceCode;
-    }
-
-    public void setMoviePriceCode(int priceCode) {
-        moviePriceCode = priceCode;
-    }
-
-    public String getMovieTitle() {
+    public String getMovieTitle(){
         return movieTitle;
     }
 }
