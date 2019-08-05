@@ -2,6 +2,7 @@ package org.fundacionjala.coding.jose.colina;
 
 public class RegularMovie extends Movie {
     private static final int FREQUENT_POINTS = 1;
+    private static final double AMOUNT_FACTOR = 1.5;
 
     public RegularMovie(String title) {
         super(title);
@@ -11,7 +12,7 @@ public class RegularMovie extends Movie {
     public double getAmount(int daysRented) {
         double amount = 2;
         if (daysRented > 2) {
-            amount += (daysRented - 2) * 1.5;
+            amount += (daysRented - 2) * AMOUNT_FACTOR;
         }
         return amount;
     }
