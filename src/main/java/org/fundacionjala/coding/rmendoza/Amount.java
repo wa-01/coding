@@ -2,7 +2,7 @@ package org.fundacionjala.coding.rmendoza;
 
 class Amount {
 
-    Amount() {
+    protected Amount() {
         // not called
     }
 

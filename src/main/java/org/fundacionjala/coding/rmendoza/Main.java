@@ -1,6 +1,6 @@
 package org.fundacionjala.coding.rmendoza;
 
-class Main {
+final class Main {
 
     private Main() {
         //not called
