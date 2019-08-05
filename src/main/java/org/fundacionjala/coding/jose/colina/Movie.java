@@ -3,7 +3,7 @@ package org.fundacionjala.coding.jose.colina;
 public abstract class Movie {
     private String title;
 
-    public Movie(String title) {
+    public Movie(final String title) {
         this.title = title;
     }
 
