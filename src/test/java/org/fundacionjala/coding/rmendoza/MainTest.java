@@ -16,7 +16,7 @@ public class MainTest {
     static final int RENT_THREE_DAYS = 3;
     static final int RENT_FOUR_DAYS = 4;
     static final int RENT_FIVE_DAYS = 5;
-    private final int DELTA_VALUE = 0;
+    static final int DELTA_VALUE = 0;
 
     @Test
     public void testChildrenMovieFourDayRental() {
