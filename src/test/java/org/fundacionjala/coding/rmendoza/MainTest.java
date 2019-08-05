@@ -18,10 +18,14 @@ public class MainTest {
     static final int RENT_FIVE_DAYS = 5;
     static final int DELTA_VALUE = 0;
 
+    static final String childrenMovie = "Lion King";
+    static final String regularMovie = "The Revenant";
+    static final String newReleaseMovie = "Joker";
+
     @Test
     public void testChildrenMovieFourDayRental() {
         Statement statement = new Statement("test");
-        statement.addRental(new Rental(new MovieChildren("Lion King"), RENT_FOUR_DAYS));
+        statement.addRental(new Rental(new MovieChildren(childrenMovie), RENT_FOUR_DAYS));
         statement.statement();
         assertEquals(EXPECTED_TOTAL_CHILDREN_4_DAYS, statement.getTotalStatement(), DELTA_VALUE);
     }
@@ -29,7 +33,7 @@ public class MainTest {
     @Test
     public void testRegularMovieFiveDayRental() {
         Statement statement = new Statement("Test");
-        statement.addRental(new Rental(new MovieRegular("The Revenant"), RENT_FIVE_DAYS));
+        statement.addRental(new Rental(new MovieRegular(regularMovie), RENT_FIVE_DAYS));
         statement.statement();
         assertEquals(EXPECTED_TOTAL_REGULAR_5_DAYS, statement.getTotalStatement(), DELTA_VALUE);
     }
@@ -37,7 +41,7 @@ public class MainTest {
     @Test
     public void testNewReleaseMovieThreeDayRental() {
         Statement statement = new Statement("Test");
-        statement.addRental(new Rental(new MovieNewRelease("Joker"), RENT_THREE_DAYS));
+        statement.addRental(new Rental(new MovieNewRelease(newReleaseMovie), RENT_THREE_DAYS));
         statement.statement();
         assertEquals(EXPECTED_TOTAL_NEW_3_DAYS, statement.getTotalStatement(), DELTA_VALUE);
     }
@@ -45,9 +49,9 @@ public class MainTest {
     @Test
     public void testRentOneOfEachMovieForFiveDays() {
         Statement statement = new Statement("Test");
-        statement.addRental(new Rental(new MovieRegular("The Revenant"), RENT_FIVE_DAYS));
-        statement.addRental(new Rental(new MovieNewRelease("Joker"), RENT_FIVE_DAYS));
-        statement.addRental(new Rental(new MovieChildren("Lion King"), RENT_FIVE_DAYS));
+        statement.addRental(new Rental(new MovieRegular(regularMovie), RENT_FIVE_DAYS));
+        statement.addRental(new Rental(new MovieNewRelease(newReleaseMovie), RENT_FIVE_DAYS));
+        statement.addRental(new Rental(new MovieChildren(childrenMovie), RENT_FIVE_DAYS));
         statement.statement();
         assertEquals(EXPECTED_ONE_OF_EACH_5_DAYS, statement.getTotalStatement(), DELTA_VALUE);
     }
@@ -55,8 +59,8 @@ public class MainTest {
     @Test
     public void testThreeDayRentalRegularHasExtraChargeButChildrenNot() {
         Statement statement = new Statement("Test");
-        statement.addRental(new Rental(new MovieRegular("The Revenant"), RENT_THREE_DAYS));
-        statement.addRental(new Rental(new MovieChildren("Lion King"), RENT_THREE_DAYS));
+        statement.addRental(new Rental(new MovieRegular(regularMovie), RENT_THREE_DAYS));
+        statement.addRental(new Rental(new MovieChildren(childrenMovie), RENT_THREE_DAYS));
         statement.statement();
         assertEquals(EXPECTED_REGULAR_CHILDREN_3_DAYS, statement.getTotalStatement(), DELTA_VALUE);
     }
@@ -64,9 +68,9 @@ public class MainTest {
     @Test
     public void testGetCustomerFrequentRenterPoints() {
         Statement statement = new Statement("Test");
-        statement.addRental(new Rental(new MovieRegular("The Revenant"), RENT_THREE_DAYS));
-        statement.addRental(new Rental(new MovieNewRelease("Joker"), RENT_THREE_DAYS));
-        statement.addRental(new Rental(new MovieChildren("Lion King"), RENT_THREE_DAYS));
+        statement.addRental(new Rental(new MovieRegular(regularMovie), RENT_THREE_DAYS));
+        statement.addRental(new Rental(new MovieNewRelease(newReleaseMovie), RENT_THREE_DAYS));
+        statement.addRental(new Rental(new MovieChildren(childrenMovie), RENT_THREE_DAYS));
         statement.statement();
         assertEquals(EXPECTED_ONE_OF_EACH_5_DAYS_POINTS, statement.getFrequentRenterPoints(), DELTA_VALUE);
     }
@@ -75,8 +79,8 @@ public class MainTest {
     public void testThreeDayRentalRegularHasExtraChargeBu() {
         String expectedCustomerName = "Test";
         Statement statement = new Statement("Test");
-        statement.addRental(new Rental(new MovieRegular("The Revenant"), RENT_FOUR_DAYS));
-        statement.addRental(new Rental(new MovieChildren("Lion King"), RENT_FOUR_DAYS));
+        statement.addRental(new Rental(new MovieRegular(regularMovie), RENT_FOUR_DAYS));
+        statement.addRental(new Rental(new MovieChildren(childrenMovie), RENT_FOUR_DAYS));
         statement.statement();
         assertEquals(expectedCustomerName, statement.getCustomerName());
     }

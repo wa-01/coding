@@ -1,8 +1,10 @@
 package org.fundacionjala.coding.rmendoza;
 
-public class MovieRegular extends Movie {
+import static org.fundacionjala.coding.rmendoza.Amount.ALLOWED_REGULAR_RENTAL_DAYS;
+import static org.fundacionjala.coding.rmendoza.Amount.REGULAR_AMOUNT;
+import static org.fundacionjala.coding.rmendoza.Amount.REGULAR_DAILY_CHARGE;
 
-    private Amount amount;
+public class MovieRegular extends Movie {
 
     public MovieRegular(final String movieTitle) {
         super(movieTitle);
@@ -10,10 +12,9 @@ public class MovieRegular extends Movie {
 
     @Override
     double getAmountOwed(int daysRented) {
-        amount = new Amount();
-        double amountOwed = amount.REGULAR_AMOUNT;
-        if (daysRented > amount.ALLOWED_REGULAR_RENTAL_DAYS) {
-            amountOwed += (daysRented - amount.ALLOWED_REGULAR_RENTAL_DAYS) * amount.REGULAR_DAILY_CHARGE;
+        double amountOwed = REGULAR_AMOUNT;
+        if (daysRented > ALLOWED_REGULAR_RENTAL_DAYS) {
+            amountOwed += (daysRented - ALLOWED_REGULAR_RENTAL_DAYS) * REGULAR_DAILY_CHARGE;
         }
         return amountOwed;
     }
