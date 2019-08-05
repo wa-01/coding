@@ -51,7 +51,8 @@ public class AmountTests {
     @Test
     public void testGetAmountRegularMovieGreaterThan2DaysRented() {
         actualAmount = regularMovie.getAmount(RENTED_DAYS_GREATER_THAN_TWO);
-        expectedAmount = EXPECTED_REGULAR_LESS_OR_EQUAL_TWO_RENTED_DAYS + (RENTED_DAYS_GREATER_THAN_TWO - RENTED_DAYS_IS_TWO) * AMOUNT_FACTOR_REGULAR;
+        expectedAmount = EXPECTED_REGULAR_LESS_OR_EQUAL_TWO_RENTED_DAYS;
+        expectedAmount += (RENTED_DAYS_GREATER_THAN_TWO - RENTED_DAYS_IS_TWO) * AMOUNT_FACTOR_REGULAR;
         Assert.assertEquals(expectedAmount, actualAmount, 0);
     }
 
@@ -69,7 +70,8 @@ public class AmountTests {
     @Test
     public void testGetAmountChildrenMovieGreaterThan3DaysRented() {
         actualAmount = childrenMovie.getAmount(RENTED_DAYS_GREATER_THAN_THREE);
-        expectedAmount = EXPECTED_CHILDREN_LESS_OR_EQUAL_THREE_RENTED_DAYS + (RENTED_DAYS_GREATER_THAN_THREE - RENTED_DAYS_IS_THREE) * AMOUNT_FACTOR_CHILDREN;
+        expectedAmount = EXPECTED_CHILDREN_LESS_OR_EQUAL_THREE_RENTED_DAYS;
+        expectedAmount += (RENTED_DAYS_GREATER_THAN_THREE - RENTED_DAYS_IS_THREE) * AMOUNT_FACTOR_CHILDREN;
         Assert.assertEquals(expectedAmount, actualAmount, 0);
     }
 
