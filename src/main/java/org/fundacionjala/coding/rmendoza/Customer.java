@@ -5,7 +5,7 @@ class Customer {
 
     private final String customerName;
 
-    Customer(String customerName) {
+    Customer(final String customerName) {
         this.customerName = customerName;
     }
 

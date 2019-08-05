@@ -2,6 +2,10 @@ package org.fundacionjala.coding.rmendoza;
 
 class Amount {
 
+    private Amount() {
+        // not called
+    }
+
     static final int NEW_RELEASE_DAILY_CHARGE = 3;
     static final double REGULAR_DAILY_CHARGE = 1.5D;
     static final double CHILDREN_DAILY_CHARGE = 1.5D;

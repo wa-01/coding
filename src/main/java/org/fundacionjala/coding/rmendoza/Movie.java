@@ -7,7 +7,7 @@ abstract class Movie {
 
     private final String movieTitle;
 
-    Movie(String movieTitle) {
+    Movie(final String movieTitle) {
         this.movieTitle = movieTitle;
     }
 
