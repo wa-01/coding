@@ -6,7 +6,7 @@ public class NewReleaseMovie extends Movie {
     private static final int AMOUNT_FACTOR = 3;
     private static final int MINIMUM_DAYS_FOR_BONUS = 1;
 
-    public NewReleaseMovie(String title) {
+    public NewReleaseMovie(final String title) {
         super(title);
     }
 

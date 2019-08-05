@@ -4,7 +4,7 @@ public class RegularMovie extends Movie {
     private static final int FREQUENT_POINTS = 1;
     private static final double AMOUNT_FACTOR = 1.5;
 
-    public RegularMovie(String title) {
+    public RegularMovie(final String title) {
         super(title);
     }
 

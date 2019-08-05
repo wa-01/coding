@@ -6,7 +6,7 @@ public class ChildrenMovie extends Movie {
     private static final double AMOUNT_FACTOR = 1.5;
     private static final double MINIMUM_AMOUNT = 1.5;
 
-    public ChildrenMovie(String title) {
+    public ChildrenMovie(final String title) {
         super(title);
     }
 

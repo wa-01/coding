@@ -1,7 +1,7 @@
 package org.fundacionjala.coding.jose.colina;
 
 public class MessagesSender {
-    public void showCustomerNameStatement(String customerName) {
+    public void showCustomerNameStatement(final String customerName) {
         System.out.println("Rental Record for " + customerName);
     }
 
@@ -14,7 +14,7 @@ public class MessagesSender {
                 + " frequent renter points");
     }
 
-    public void showRental(String title, double amount) {
+    public void showRental(final String title, double amount) {
         System.out.println("\t" + title + "\t" + amount);
     }
 }

@@ -8,11 +8,11 @@ public class Customer {
     private Vector rentals = new Vector();
     private MessagesSender messagesSender = new MessagesSender();
 
-    public Customer(String name) {
+    public Customer(final String name) {
         this.name = name;
     }
 
-    public void addRental(Rental arg) {
+    public void addRental(final Rental arg) {
         this.rentals.addElement(arg);
     }
 
