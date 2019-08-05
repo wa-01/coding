@@ -9,6 +9,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 public class MessageSenderTests {
+    private static final double AMOUNT_FOR_RENTAL_TEST = 7;
+    private static final double AMOUNT_FOR_AMOUNT_OWNED_TEST = 10;
+    private static final int FREQUENT_POINTS = 7;
     private String expectedMessage;
     private String actualMessage;
     private static MessagesSender messagesSender;
@@ -45,26 +48,23 @@ public class MessageSenderTests {
     }
     @Test
     public void testShowAmountOwned() {
-        double amount = 10;
-        expectedMessage = "Amount owed is " + amount + System.lineSeparator();
-        messagesSender.showAmountOwned(amount);
+        expectedMessage = "Amount owed is " + AMOUNT_FOR_AMOUNT_OWNED_TEST + System.lineSeparator();
+        messagesSender.showAmountOwned(AMOUNT_FOR_AMOUNT_OWNED_TEST);
         actualMessage = consoleOutput.toString();
         Assert.assertEquals(expectedMessage, actualMessage);
     }
     @Test
     public void testShowFrequentPointsEarned() {
-        int frequentPoints = 7;
-        expectedMessage = "You earned " + frequentPoints + " frequent renter points" + System.lineSeparator();
-        messagesSender.showFrequentPointsEarned(frequentPoints);
+        expectedMessage = "You earned " + FREQUENT_POINTS + " frequent renter points" + System.lineSeparator();
+        messagesSender.showFrequentPointsEarned(FREQUENT_POINTS);
         actualMessage = consoleOutput.toString();
         Assert.assertEquals(expectedMessage, actualMessage);
     }
     @Test
     public void testShowRental() {
         String title = "My movie";
-        double amount = 7;
-        expectedMessage = "\t" + title + "\t" + amount + System.lineSeparator();
-        messagesSender.showRental(title, amount);
+        expectedMessage = "\t" + title + "\t" + AMOUNT_FOR_RENTAL_TEST + System.lineSeparator();
+        messagesSender.showRental(title, AMOUNT_FOR_RENTAL_TEST);
         actualMessage = consoleOutput.toString();
         Assert.assertEquals(expectedMessage, actualMessage);
     }

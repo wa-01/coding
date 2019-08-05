@@ -7,6 +7,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 public class CustomerTests {
+    private static final int CHILDREN_DAYS_RENTED = 5;
+    private static final int REGULAR_DAYS_RENTED = 2;
+    private static final int NEW_RELEASE_DAYS_RENTED = 2;
     private Customer customer;
     private static ByteArrayOutputStream consoleOutput;
     private static PrintStream newPrintStream;
@@ -34,9 +37,9 @@ public class CustomerTests {
     public void testStatementWith3MovieTypes() {
         changePrintConsoleStream();
         customer = new Customer("Pedro Picapiedra");
-        customer.addRental(new Rental(new NewReleaseMovie("The Revenant"), 2));
-        customer.addRental(new Rental(new RegularMovie("Terminator"), 2));
-        customer.addRental(new Rental(new ChildrenMovie("Snow White"), 5));
+        customer.addRental(new Rental(new NewReleaseMovie("The Revenant"), NEW_RELEASE_DAYS_RENTED));
+        customer.addRental(new Rental(new RegularMovie("Terminator"), REGULAR_DAYS_RENTED));
+        customer.addRental(new Rental(new ChildrenMovie("Snow White"), CHILDREN_DAYS_RENTED));
         customer.statement();
         String expectedStatement = "Rental Record for Pedro Picapiedra"
                 + System.lineSeparator()
